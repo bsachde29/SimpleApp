@@ -12,8 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleApp"
         android:usesCleartextTraffic="true">
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".SignUpActivity"
+        <activity android:name=".ProductListActivity"></activity>
+        <activity android:name=".LoginActivity" />
+        <activity
+            android:name=".SignUpActivity"
             android:exported="true" />
         <activity android:name=".MainActivity">
             <intent-filter>
