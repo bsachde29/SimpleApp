@@ -54,14 +54,6 @@ try{
         }
     }
 
-    $stmt = "INSERT into Orders (BuyerID, totalPrice, OrderState, FirstName, LastName, Email, 
-    MobileNum, OrderAccept, DiscountID) VALUES ('$buyerID', '$totalPrice', '$orderState', '$firstName', '$lastName', 
-    '$email', '$mobileNum', '$orderAccept', '$discountCode')";
-    if ($conn->query($stmt) === TRUE) {
-        $orderID = $conn->lastInsertId();
-        echo json_encode($orderID);
-    }
-
 }
 catch(PDOException$e) {
     echo "Error: ".$e ->getMessage();
