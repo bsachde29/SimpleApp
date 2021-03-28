@@ -5,15 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <EditText
         android:id="@+id/email_su"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="27"
         android:layout_marginStart="51dp"
-        android:layout_marginLeft="51dp"
         android:layout_marginTop="140dp"
         android:layout_marginEnd="51dp"
-        android:layout_marginRight="51dp"
         android:layout_marginBottom="40dp"
         android:background="#EAEAEA"
         android:text="Email"
@@ -22,14 +20,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/phNumber_su"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="27"
         android:layout_marginStart="51dp"
-        android:layout_marginLeft="51dp"
         android:layout_marginEnd="51dp"
-        android:layout_marginRight="51dp"
         android:layout_marginBottom="45dp"
         android:background="#EAEAEA"
         android:text="Mobile Number"
@@ -38,14 +34,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lastName_su" />
 
-    <TextView
+    <EditText
         android:id="@+id/pass_su"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="27"
         android:layout_marginStart="51dp"
-        android:layout_marginLeft="51dp"
         android:layout_marginEnd="51dp"
-        android:layout_marginRight="51dp"
         android:layout_marginBottom="49dp"
         android:background="#EAEAEA"
         android:inputType="textPassword"
@@ -55,14 +49,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phNumber_su" />
 
-    <TextView
+    <EditText
         android:id="@+id/pass_su2"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="27"
         android:layout_marginStart="51dp"
-        android:layout_marginLeft="51dp"
         android:layout_marginEnd="51dp"
-        android:layout_marginRight="51dp"
         android:layout_marginBottom="68dp"
         android:background="#EAEAEA"
         android:inputType="textPassword"
@@ -72,7 +64,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pass_su" />
 
-    <TextView
+    <EditText
         android:id="@+id/firstName_su"
         android:layout_width="0dp"
         android:layout_height="27dp"
@@ -86,12 +78,11 @@
         app:layout_constraintEnd_toStartOf="@+id/lastName_su"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/lastName_su"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="27"
         android:layout_marginEnd="51dp"
-        android:layout_marginRight="51dp"
         android:layout_marginBottom="41dp"
         android:background="#EDEDED"
         android:text="Last Name"
