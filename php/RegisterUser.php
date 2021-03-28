@@ -11,8 +11,7 @@ $servername = "selldb.cqt5tgj7qyws.us-east-2.rds.amazonaws.com";
 $username = "simpledb";
 $password = "sell1234";
 $dbname = "simpledb";
-echo "first name is ";
-echo $firstName;
+
 
 try{
     $conn = new PDO("mysql:host=$servername;dbname=$dbname",$username, $password);
