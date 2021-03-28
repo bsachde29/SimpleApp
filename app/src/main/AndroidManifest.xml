@@ -13,7 +13,8 @@
         android:theme="@style/Theme.SimpleApp"
         android:usesCleartextTraffic="true">
         <activity android:name=".ProductListActivity"></activity>
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".LoginActivity"
+            android:exported="true" />
         <activity
             android:name=".SignUpActivity"
             android:exported="true" />

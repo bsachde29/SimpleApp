@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL);
-$email = $_GET['Email'];
-$pswd = $_GET['Pswd'];
+$email = $_POST['Email'];
+$pswd = $_POST['Pswd'];
 
 $servername = "selldb.cqt5tgj7qyws.us-east-2.rds.amazonaws.com";
 $username = "simpledb";
@@ -13,7 +13,7 @@ try{
     $conn = new PDO("mysql:host=$servername;dbname=$dbname",$username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt2 = $conn->prepare("SELECT BuyerID from Buyers where Email = '$email'");
+    $stmt2 = $conn->prepare("SELECT * from Buyers where Email = '$email'");
     $stmt2->execute();
     $buyer = $stmt2->fetchAll(PDO::FETCH_ASSOC);
     if (count($buyer) == 0) {
@@ -22,7 +22,7 @@ try{
         $buyerId = $buyer[0]['BuyerID'];
         $passFrom = $buyer[0]['Pswd'];
         if ($passFrom != $pswd) {
-            echo "Wrong Details";
+            echo "\nWrong Details";
         } else {
             echo(json_encode($buyer[0]));
         }
