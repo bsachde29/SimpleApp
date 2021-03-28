@@ -21,12 +21,10 @@ try{
 
     $stmt->execute();
     $stmt2 = $conn->prepare("SELECT BuyerID from Buyers where Email = '$email'");
-
     $stmt2->execute();
     $buyer = $stmt2->fetchAll(PDO::FETCH_ASSOC);
     $buyerId = $buyer[0]['BuyerID'];
     $stmt3 = $conn->prepare("insert into Seller_Buyer (SellerID, BuyerID) VALUES ('$sellerId', '$buyerId')");
-
     $stmt3->execute();
 
 
