@@ -6,11 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <TextView
-        android:id="@+id/email_li"
-        android:layout_width="287dp"
-        android:layout_height="38dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="228dp" />
+    <EditText
+        android:id="@+id/emai_li"
+        android:layout_width="302dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="206dp" />
+
+    <EditText
+        android:id="@+id/password_li"
+        android:layout_width="302dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="315dp" />
+
+    <Button
+        android:id="@+id/signin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign In"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="427dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
