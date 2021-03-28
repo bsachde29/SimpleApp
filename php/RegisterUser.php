@@ -25,6 +25,9 @@ try{
     $buyerId = $buyer[0]['BuyerID'];
     $stmt3 = $conn->prepare("insert into Seller_Buyer (SellerID, BuyerID) VALUES ('$sellerId', '$buyerId')");
     $stmt3->execute();
+    $stmt4 = $conn->prepare("INSERT INTO Cart (BuyerID, FirstName, LastName, Email, MobileNum) 
+    VALUES ('$buyerId', '$firstName', '$lastName', '$email', '$mobileNum'");
+    $stmt4->execute();
 
 
 }
