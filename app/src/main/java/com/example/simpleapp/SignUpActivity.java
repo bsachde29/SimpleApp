@@ -6,7 +6,7 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -21,7 +21,7 @@ import java.util.*;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    TextView email, password, repassword, firstName, lastName, phNumber;
+    EditText email, password, repassword, firstName, lastName, phNumber;
     Button signup;
     ProgressDialog progressDialog;
 
@@ -30,12 +30,12 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        email = (TextView) findViewById(R.id.email_su);
-        phNumber = (TextView) findViewById(R.id.phNumber_su);
+        email = (EditText) findViewById(R.id.email_su);
+        phNumber = (EditText) findViewById(R.id.phNumber_su);
         firstName = findViewById(R.id.firstName_su);
         lastName = findViewById(R.id.lastName_su);
-        password = (TextView) findViewById(R.id.pass_su);
-        repassword = (TextView) findViewById(R.id.pass_su2);
+        password = (EditText) findViewById(R.id.pass_su);
+        repassword = (EditText) findViewById(R.id.pass_su2);
         signup = (Button) findViewById(R.id.signup);
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Please wait...");
@@ -86,14 +86,14 @@ public class SignUpActivity extends AppCompatActivity {
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            progressDialog.hide();
+                            System.out.println(error.getMessage());
                             Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
                         }
                     }) {
                             @Override
                             protected Map<String, String> getParams() throws AuthFailureError {
                                 Map<String, String> params = new HashMap<>();
-                                params.put("FistName", FirstName);
+                                params.put("FirstName", FirstName);
                                 params.put("LastName", LastName);
                                 params.put("Email", Email);
                                 params.put("MobileNum", PhNumber);
