@@ -17,12 +17,18 @@ try{
     $conn = new PDO("mysql:host=$servername;dbname=$dbname",$username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $conn->prepare("insert into Buyers (FirstName, LastName, Email, MobileNum, Pswd, SellerID) VALUES ('$firstName', '$lastName', '$email', '$mobileNum', '$pswd', '$sellerId')");
-    $stmt->execute();
+    echo $stmt;
+    echo "\n";
+    //$stmt->execute();
     $stmt2 = $conn->prepare("SELECT BuyerID from Buyers where Email = '$email'");
-    $stmt2->execute();
+    echo $stmt2;
+    echo "\n";
+    //$stmt2->execute();
     $buyer = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-    $stmt3 = $conn->prepare("insert into Seller_Buyer (SellerID, BuyerID) VALUES ('$sellerId', '$buyer')");
-    $stmt3->execute();
+    $stmt3 = $conn->prepare("insert into Seller_Buyer (SellerID, BuyerID) VALUES ('$sellerId', '$buyer[0]['SellerID']')");
+    echo $stmt3;
+    echo "\n";
+    //$stmt3->execute();
 
 
 }
