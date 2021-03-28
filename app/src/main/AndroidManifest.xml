@@ -13,7 +13,8 @@
         android:theme="@style/Theme.SimpleApp"
         android:usesCleartextTraffic="true">
         <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".SignUpActivity" />
+        <activity android:name=".SignUpActivity"
+            android:exported="true" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
