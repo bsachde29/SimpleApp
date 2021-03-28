@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="83a919b4-3fc5-4f90-b750-811e2d8e704d" name="awsSimple" url="http://3.128.221.131">
+        <fileTransfer rootFolder="/var/www/html" accessType="SFTP" host="3.128.221.131" port="22" sshConfigId="cfc67ac8-6565-496e-a369-9f5ccb49bb01" sshConfig="ec2-user@3.128.221.131:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
