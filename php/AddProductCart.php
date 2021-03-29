@@ -13,9 +13,6 @@ $dbname = "simpledb";
 try{
     $conn = new PDO("mysql:host=$servername;dbname=$dbname",$username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("insert into Cart_Product_Count (CartID, ProductID, Count) VALUES ('$cartID', 
-    '$productID', '$count')");
-    $stmt->execute();
     $stmt2 = $conn->prepare("SELECT * FROM Cart WHERE CartID = '$cartID'");
     $stmt2->execute();
     $cart = $stmt2->fetchAll(PDO::FETCH_ASSOC);
@@ -30,9 +27,11 @@ try{
         } else {
             $productPrice = $product[0]['price'];
             $totalPrice = $cart[0]['totalPrice'];
-            $totalPrice = $totalPrice + ($productPrice * $count);
-            $stmt4 = $conn->prepare("UPDATE Cart SET totalPrice = '$totalPrice' WHERE CartID = '$cartID'");
+            $newPrice = $totalPrice + ($productPrice * $count);
+            $stmt4 = $conn->prepare("UPDATE Cart SET totalPrice = '$newPrice' WHERE CartID = '$cartID'");
             $stmt4->execute();
+            $stmt5 = $conn->prepare("INSERT INTO Cart_Product_Count (CartID, ProductID, Count) 
+            VALUES ('$cartID', '$productID', '$count')");
         }
     }
 }
