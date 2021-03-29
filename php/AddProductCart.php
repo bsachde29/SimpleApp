@@ -13,9 +13,6 @@ $dbname = "simpledb";
 try{
     $conn = new PDO("mysql:host=$servername;dbname=$dbname",$username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("insert into Cart_Product_Count (CartID, ProductID, Count) VALUES ('$cartID', 
-    '$productID', '$count')");
-    $stmt->execute();
     $stmt2 = $conn->prepare("SELECT * FROM Cart WHERE CartID = '$cartID'");
     $stmt2->execute();
     $cart = $stmt2->fetchAll(PDO::FETCH_ASSOC);
