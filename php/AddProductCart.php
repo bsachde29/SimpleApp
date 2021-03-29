@@ -30,9 +30,11 @@ try{
         } else {
             $productPrice = $product[0]['price'];
             $totalPrice = $cart[0]['totalPrice'];
-            $totalPrice = $totalPrice + ($productPrice * $count);
-            $stmt4 = $conn->prepare("UPDATE Cart SET totalPrice = '$totalPrice' WHERE CartID = '$cartID'");
+            $newPrice = $totalPrice + ($productPrice * $count);
+            $stmt4 = $conn->prepare("UPDATE Cart SET totalPrice = '$newPrice' WHERE CartID = '$cartID'");
             $stmt4->execute();
+            $stmt5 = $conn->prepare("INSERT INTO Cart_Product_Count (CartID, ProductID, Count) 
+            VALUES ('$cartID', '$productID', '$count')");
         }
     }
 }
