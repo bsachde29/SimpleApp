@@ -1,7 +1,6 @@
 <?php
 error_reporting(E_ALL);
-$email = $_POST['Email'];
-$pswd = $_POST['Pswd'];
+$buyerID  = $_POST['buyerID'];
 
 $servername = "selldb.cqt5tgj7qyws.us-east-2.rds.amazonaws.com";
 $username = "simpledb";
@@ -12,31 +11,18 @@ $dbname = "simpledb";
 try{
     $conn = new PDO("mysql:host=$servername;dbname=$dbname",$username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $stmt2 = $conn->prepare("SELECT * from Buyers where Email = '$email'");
+    $stmt2 = $conn->prepare("SELECT * FROM Cart WHERE BuyerID = '$buyerID'");
     $stmt2->execute();
-    $buyer = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-    if (count($buyer) == 0) {
+    $cart = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+    if (count($cart) == 0) {
         echo "Wrong Details";
     } else {
-        $buyerId = $buyer[0]['BuyerID'];
-        $passFrom = $buyer[0]['Pswd'];
-        if ($passFrom != $pswd) {
-            echo "\nWrong Details";
-        } else {
-            echo(json_encode($buyer[0]));
-        }
+        $cartID = $cart[0]['CartID'];
+        echo (json_encode($cartID));
     }
-
-
 }
 catch(PDOException$e) {
     echo "Error: ".$e ->getMessage();
-
 }
 
 ?>
-
-
-
-

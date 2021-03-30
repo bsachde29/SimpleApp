@@ -33,13 +33,13 @@ public class LoginActivity extends AppCompatActivity {
         email = (EditText) findViewById(R.id.emai_li);
         password = (EditText) findViewById(R.id.password_li);
         signIn = (Button) findViewById(R.id.signin);
+        progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Please wait...");
         signIn.setOnClickListener(new View.OnClickListener() {
 
             @Override
 
             public void onClick(View view) {
-                //TODO check password matching
                 signInUser();
             }
 
@@ -52,18 +52,20 @@ public class LoginActivity extends AppCompatActivity {
         final String Pass = password.getText().toString();
         StringRequest stringRequest = null;
         try {
-            stringRequest = new StringRequest(Request.Method.GET,
-                    Constants.URL_SignUp,
+            stringRequest = new StringRequest(Request.Method.POST,
+                    Constants.URL_LogIN,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
+
                             progressDialog.dismiss();
-                            if (response.equalsIgnoreCase("Wrong Details")) {
+//                            email.setText(response);
+                            if (response.trim().equalsIgnoreCase("Wrong Details")) {
                                 Toast.makeText(getApplicationContext(),
                                         response, Toast.LENGTH_LONG).show();
                             } else {
                                 try {
-                                    email.setText(response);  //TODO change add login successful
+
                                     JSONObject jsonObject = new JSONObject(response);
                                     String BuyerID = (String) jsonObject.get("BuyerID");
                                     SaveSharedPreference.setPrefBuyerId(getApplicationContext(), BuyerID);
@@ -93,6 +95,8 @@ public class LoginActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
 
 
     }
