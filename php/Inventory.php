@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ALL);
-$sellerId = $_POST['SellerID'];
+$sellerId = $_GET['SellerID'];
 
 $servername = "selldb.cqt5tgj7qyws.us-east-2.rds.amazonaws.com";
 $username = "simpledb";
@@ -17,14 +17,14 @@ try{
     $prodArray = array();
     $counter = 0;
     foreach ($product_temp as $id) {
-       // echo "$id \n";
+        // echo "$id \n";
         $stmt2 = $conn->prepare("SELECT * FROM Product WHERE ProductID = '$id' AND isSubProduct = 0");
         $stmt2->execute();
         $prodList = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-        $prodArray[$counter] = $prodList;
+        $prodArray[$counter] = $prodList[0];
         $counter++;
     }
-    echo json_encode($prodArray);
+    echo json_encode(($prodArray));
 
 }
 catch(PDOException$e) {
