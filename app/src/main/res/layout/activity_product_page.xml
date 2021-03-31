@@ -18,17 +18,21 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
+
     <TextView
         android:id="@+id/desc_pp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
         android:layout_marginEnd="26dp"
         android:layout_marginBottom="56dp"
+        android:width="348dp"
+        android:background="#FFFFFF"
         android:text="Sample Desc "
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/add_pp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_pp" />
 
@@ -39,7 +43,7 @@
         android:layout_marginStart="26dp"
         android:layout_marginBottom="28dp"
         android:text="Description"
-        android:textSize="22sp"
+        android:textSize="19sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/desc_pp"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,16 +54,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="47dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="127dp"
+        android:layout_marginBottom="120dp"
         android:text="$ 2.00"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/add_pp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/desc_pp"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/title_pp"
@@ -77,11 +77,10 @@
 
     <Button
         android:id="@+id/add_pp"
-        android:layout_width="111dp"
-        android:layout_height="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="64dp"
-        android:layout_marginBottom="122dp"
-        android:height="wrap_content"
+        android:layout_marginBottom="116dp"
         android:background="#7CB3DF"
         android:minLines="1"
         android:text="Add to Cart"
@@ -89,6 +88,6 @@
         android:textColorLink="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/price_pp"
-        app:layout_constraintTop_toBottomOf="@+id/desc_pp" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/price_pp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
