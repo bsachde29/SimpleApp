@@ -1,5 +1,4 @@
 package com.example.simpleapp;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -8,9 +7,9 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
-
 import java.io.File;
 import java.io.InputStream;
+
 
 public class ProductCell {
 
@@ -31,10 +30,7 @@ public class ProductCell {
         price.setText("$ " + Price);
         desc.setText(Desc);
         desc.setMaxWidth(400);
-
-
         imageView.setImageDrawable(d);
-
 
         setMargins((ViewGroup) tableRow, 10, 20, 8, 8);
         tableRow.setBackgroundColor(Color.parseColor("#ffffff"));
