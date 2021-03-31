@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class ProductPageActivity extends AppCompatActivity {
 
-    TextView title = findViewById(R.id.title_pp), desc = findViewById(R.id.desc_pp), price = findViewById(R.id.price_pp);
+    TextView title, desc , price;
     Button button = findViewById(R.id.add_pp);
     ImageView image = findViewById(R.id.imageView_pp);
 
@@ -17,5 +17,8 @@ public class ProductPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_page);
+        title = findViewById(R.id.title_pp);
+        desc = findViewById(R.id.desc_pp);
+        price = findViewById(R.id.price_pp);
     }
 }
