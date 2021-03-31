@@ -2,8 +2,10 @@ package com.example.simpleapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.Toast;
@@ -48,12 +50,8 @@ public class ProductListActivity extends AppCompatActivity {
                         public void onResponse(String response) {
 
                             try {
-
-                                System.out.println("fsafdsafdsfdsa");
                                 System.out.println(response);
-                                System.out.println("HIDJKhfkdsgjdasgfhdksal");
                                 JSONArray jsonArray = new JSONArray(response);
-
 
 //                                cell1 = new ProductCell(getApplicationContext(), "Arjun", "Shivam loda loda loda loda loda loda loda loda loda loda ", "2", d);
 //                                cell2 = new ProductCell(getApplicationContext(), "gfxchjk", "dbvck hbsdhjv ljhgsadfb hkvbh kas dbkhv cbhk adsbhj ", "3000", d);
@@ -64,12 +62,29 @@ public class ProductListActivity extends AppCompatActivity {
                                         continue;
                                     }
                                     JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                    String name =  jsonObject.getString("Name");
+                                    String desc = jsonObject.getString("Description");
+                                    String price = jsonObject.getString("price");
+                                    String ProductID = jsonObject.getString("ProductID");
+
                                     cell = new ProductCell(getApplicationContext(),
-                                            jsonObject.getString("Name"),
-                                            jsonObject.getString("Description"),
-                                            jsonObject.getString("price"), d);
+                                            name, desc, price, d);
                                     tableLayout = findViewById(R.id.tableLayoutProdList);
                                     tableLayout.addView(new RowDivider(getApplicationContext()).tableRow);
+                                    cell.tableRow.setOnClickListener(new View.OnClickListener()
+                                    {
+                                        @Override
+                                        public void onClick(View v)
+                                        {
+                                            Intent intent = new Intent(getBaseContext(), ProductPageActivity.class);
+                                            intent.putExtra("Name", name);
+                                            intent.putExtra("Description", desc);
+                                            intent.putExtra("price", price);
+                                            intent.putExtra("assetImage", "prod_holder.jpg");
+                                            intent.putExtra("ProductID", ProductID);
+                                            startActivity(intent);
+                                        }
+                                    });
                                     tableLayout.addView(cell.tableRow);
                                 }
 
