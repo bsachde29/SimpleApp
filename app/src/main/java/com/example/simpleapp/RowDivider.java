@@ -11,6 +11,6 @@ public class RowDivider {
     RowDivider(Context context) {
         tableRow = new TableRow(context);
         tableRow.setMinimumHeight(8);
-        tableRow.setBackgroundColor(Color.parseColor("# "));
+        tableRow.setBackgroundColor(Color.parseColor("#cccccc"));
     }
 }

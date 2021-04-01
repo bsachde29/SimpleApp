@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleApp"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ProductPageActivity"></activity>
+        <activity android:name=".CartActivity"></activity>
+        <activity android:name=".ProductPageActivity" />
         <activity
             android:name=".ProductListActivity"
             android:exported="true" />

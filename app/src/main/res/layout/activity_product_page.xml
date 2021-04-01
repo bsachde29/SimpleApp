@@ -4,6 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
+    android:paddingLeft="10dp"
+    android:paddingTop="10dp"
+    android:paddingEnd="10dp"
+    android:paddingRight="10d"
     tools:context=".ProductPageActivity">
 
     <ImageView
@@ -15,8 +20,7 @@
         app:layout_constraintBottom_toTopOf="@+id/title_pp2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/desc_pp"
@@ -77,11 +81,10 @@
 
     <Button
         android:id="@+id/add_pp"
-        android:layout_width="111dp"
-        android:layout_height="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="64dp"
         android:layout_marginBottom="122dp"
-        android:height="wrap_content"
         android:background="#7CB3DF"
         android:minLines="1"
         android:text="Add to Cart"
