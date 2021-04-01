@@ -1,6 +1,7 @@
 <?php
 error_reporting(E_ALL);
-$buyerID  = $_POST['BuyerID'];
+$buyerID = $_POST['BuyerID'];
+$addressID = $_POST['AddressID'];
 
 $servername = "selldb.cqt5tgj7qyws.us-east-2.rds.amazonaws.com";
 $username = "simpledb";
@@ -11,18 +12,13 @@ $dbname = "simpledb";
 try{
     $conn = new PDO("mysql:host=$servername;dbname=$dbname",$username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt2 = $conn->prepare("SELECT * FROM Cart WHERE BuyerID = '$buyerID'");
-    $stmt2->execute();
-    $cart = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-    if (count($cart) == 0) {
-        echo "Wrong Details";
-    } else {
-        $cartID = $cart[0]['CartID'];
-        echo (json_encode($cartID));
-    }
+    $stmt = $conn->prepare("DELETE FROM AddressBook WHERE BuyerID = '$buyerID' AND AddressID = '$addressID'");
+    $stmt->execute();
+
 }
 catch(PDOException$e) {
     echo "Error: ".$e ->getMessage();
+
 }
 
 ?>

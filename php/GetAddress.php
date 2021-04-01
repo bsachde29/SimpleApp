@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ALL);
-$cartID = $_POST['cartID'];
+$buyerID = $_POST['BuyerID'];
 
 $servername = "selldb.cqt5tgj7qyws.us-east-2.rds.amazonaws.com";
 $username = "simpledb";
@@ -11,22 +11,20 @@ $dbname = "simpledb";
 try{
     $conn = new PDO("mysql:host=$servername;dbname=$dbname",$username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT * FROM Cart_Product_Count WHERE CartID = '$cartID'");
+    $stmt = $conn->prepare("SELECT * FROM AddressBook WHERE BuyerID = '$buyerID'");
     $stmt->execute();
-    $cart = $stmt->fetchAll(PDO::FETCH_COLUMN, 1);
-    $cartObj = $cart[0];
+    $address = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    //echo($address);
 //    $prodArray = array();
-//    $counter = 0;
-//    foreach ($cart[$counter]['ProductID'] as $id) {
+//    for ($counter = 0; $counter < count($order); $counter++) {
 //        // echo "$id \n";
-//        $stmt2 = $conn->prepare("SELECT * FROM Product WHERE ProductID = '$id' AND isSubProduct = 0");
+//        $id = $order[$counter]['ProductID'];
+//        $stmt2 = $conn->prepare("SELECT * FROM Product WHERE ProductID = '$id'");
 //        $stmt2->execute();
 //        $prodList = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 //        $prodArray[$counter] = $prodList;
-//        $counter++;
 //    }
-    echo json_encode($cartObj);
-
+    echo json_encode($address);
 }
 catch(PDOException$e) {
     echo "Error: ".$e ->getMessage();
@@ -34,7 +32,3 @@ catch(PDOException$e) {
 }
 
 ?>
-
-
-
-

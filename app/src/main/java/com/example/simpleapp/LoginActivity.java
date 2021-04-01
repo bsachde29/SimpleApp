@@ -41,6 +41,8 @@ public class LoginActivity extends AppCompatActivity {
 
             public void onClick(View view) {
                 signInUser();
+
+
             }
 
         });
@@ -69,8 +71,12 @@ public class LoginActivity extends AppCompatActivity {
                                     JSONObject jsonObject = new JSONObject(response);
                                     String BuyerID = (String) jsonObject.get("BuyerID");
                                     SaveSharedPreference.setPrefBuyerId(getApplicationContext(), BuyerID);
+                                    setPrefCardId();
                                     Toast.makeText(getApplicationContext(),
                                             "Successfully logged in", Toast.LENGTH_LONG).show();
+
+                                    // TODO Redirect to some page here
+
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
@@ -98,6 +104,49 @@ public class LoginActivity extends AppCompatActivity {
 
         RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
 
+    }
+
+    public void setPrefCardId() {
+        StringRequest stringRequest = null;
+        try {
+            stringRequest = new StringRequest(Request.Method.POST,
+                    Constants.URL_GetCartID,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+
+                            try {
+
+                                System.out.println("Cart Fetched Successfully");
+                                JSONObject jsonObject = new JSONObject(response);
+                                SaveSharedPreference.setPrefCartId(getApplicationContext(), jsonObject.getString("cartID"));
+
+                            } catch (Exception e) {
+
+                                e.printStackTrace();
+                            }
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            System.out.println(error.getMessage());
+                            Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    }) {
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<>();
+                    params.put("BuyerID", SaveSharedPreference.getPrefBuyerId(getApplicationContext()));
+                    return params;
+                }
+            };
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
 
     }
 }

@@ -18,4 +18,8 @@ public class Constants {
 
     public static final String URL_Inventory = ROOT_URL + "Inventory.php";
 
+    public static final String URL_GetCartID = ROOT_URL + "GetCartID.php";
+
+
+
 }
