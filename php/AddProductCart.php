@@ -25,13 +25,28 @@ try{
         if (count($product) == 0) {
             echo "Wrong Product Details";
         } else {
-            $productPrice = $product[0]['price'];
-            $totalPrice = $cart[0]['totalPrice'];
-            $newPrice = $totalPrice + ($productPrice * $count);
-            $stmt4 = $conn->prepare("UPDATE Cart SET totalPrice = '$newPrice' WHERE CartID = '$cartID'");
-            $stmt4->execute();
-            $stmt5 = $conn->prepare("INSERT INTO Cart_Product_Count (CartID, ProductID, Count) 
+            $stmt6 = $conn->prepare("SELECT * FROM Cart_Product_Count WHERE CartID = '$cartID' AND ProductID = '$productID'");
+            $stmt6->execute();
+            $existing = $stmt6->fetchAll(POD::FETCH_ASSOC);
+            if (count($existing) == 0) {
+                $productPrice = $product[0]['price'];
+                $totalPrice = $cart[0]['totalPrice'];
+                $newPrice = $totalPrice + ($productPrice * $count);
+                $stmt4 = $conn->prepare("UPDATE Cart SET totalPrice = '$newPrice' WHERE CartID = '$cartID'");
+                $stmt4->execute();
+                $stmt5 = $conn->prepare("INSERT INTO Cart_Product_Count (CartID, ProductID, Count) 
             VALUES ('$cartID', '$productID', '$count')");
+            } else {
+                $curCount = $existing[0]['Count'];
+                $productPrice = $product[0]['price'];
+                $totalPrice = $cart[0]['totalPrice'];
+                $newPrice = $totalPrice + ($productPrice * $count);
+                $stmt7 = $conn->prepare("UPDATE Cart_Product_Count SET Count = '$curCount + $count' WHERE 
+                                                            CartID = '$cartID' AND ProductID = '$productID'");
+                $stmt7->execute();
+                $stmt8 = $conn->prepare("UPDATE Cart SET totalPrice = '$newPrice' WHERE CartID = '$cartID'");
+                $stmt8->execute();
+            }
         }
     }
 }
