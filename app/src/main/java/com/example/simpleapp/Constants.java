@@ -16,4 +16,6 @@ public class Constants {
 
     public static final String URL_LogIN = ROOT_URL + "LogInUser.php";
 
+    public static final String URL_Inventory = ROOT_URL + "Inventory.php";
+
 }
