@@ -1,6 +1,8 @@
 <?php
 error_reporting(E_ALL);
-$cartID = $_POST['CartID'];
+$cartID = $_POST['cartID'];
+
+//$cartID = $_GET['cartID'];
 
 $servername = "selldb.cqt5tgj7qyws.us-east-2.rds.amazonaws.com";
 $username = "simpledb";
@@ -13,7 +15,7 @@ try{
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $conn->prepare("SELECT * FROM Cart_Product_Count WHERE CartID = '$cartID'");
     $stmt->execute();
-    $cart = $stmt->fetchAll(PDO::FETCH_COLUMN, 1);
+    $cart = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $prodArray = array();
     for ($counter = 0; $counter < count($cart); $counter++) {
         // echo "$id \n";
@@ -21,7 +23,7 @@ try{
         $stmt2 = $conn->prepare("SELECT * FROM Product WHERE ProductID = '$id'");
         $stmt2->execute();
         $prodList = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-        $prodArray[$counter] = $prodList;
+        $prodArray[$counter] = $prodList[0];
     }
     echo json_encode($prodArray);
 }
