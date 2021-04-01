@@ -1016,7 +1016,7 @@
     </column>
     <column id="316" parent="285" name="totalPrice">
       <Position>3</Position>
-      <DataType>int|0s</DataType>
+      <DataType>double|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
     </column>
     <column id="317" parent="285" name="LastName">
@@ -1372,21 +1372,33 @@
       <Position>10</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="388" parent="295" name="SecurityQuestion">
+    <column id="388" parent="295" name="SecurityQuestion1">
       <Position>11</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <index id="389" parent="295" name="Sellers_Email_uindex">
+    <column id="389" parent="295" name="SecurityQuestion2">
+      <Position>12</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="390" parent="295" name="Answer1">
+      <Position>13</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="391" parent="295" name="Answer2">
+      <Position>14</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <index id="392" parent="295" name="Sellers_Email_uindex">
       <ColNames>Email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="390" parent="295" name="PRIMARY">
+    <key id="393" parent="295" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>SellerID</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="391" parent="295" name="Sellers_Email_uindex">
+    <key id="394" parent="295" name="Sellers_Email_uindex">
       <ColNames>Email</ColNames>
       <UnderlyingIndexName>Sellers_Email_uindex</UnderlyingIndexName>
     </key>

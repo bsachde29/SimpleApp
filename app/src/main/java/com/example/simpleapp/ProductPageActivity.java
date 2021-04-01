@@ -9,8 +9,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+
+import org.json.JSONObject;
 
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ProductPageActivity extends AppCompatActivity {
 
@@ -30,6 +41,9 @@ public class ProductPageActivity extends AppCompatActivity {
         this.button = findViewById(R.id.add_pp);
         this.image = findViewById(R.id.imageView_pp);
 
+
+        SaveSharedPreference.setPrefBuyerId(getApplicationContext(), "1");
+        SaveSharedPreference.setPrefCartId(getApplicationContext(), "1");
 
         try {
             Intent intent = getIntent();
@@ -57,7 +71,7 @@ public class ProductPageActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v)
                 {
-
+                    addToCart(ProductID);
                 }
             });
 
@@ -67,6 +81,55 @@ public class ProductPageActivity extends AppCompatActivity {
     }
 
     private void addToCart(String ProductID) {
-        String BuyerID =
+        String BuyerID = SaveSharedPreference.getPrefBuyerId(getApplicationContext());
+        String CartID = SaveSharedPreference.getPrefBuyerId(getApplicationContext());
+
+
+        StringRequest stringRequest = null;
+        try {
+            stringRequest = new StringRequest(Request.Method.POST,
+                    Constants.URL_AddProductCart,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+
+                            try {
+                                System.out.println(response);
+                                //TODO redirect to cart
+
+
+                            } catch (Exception e) {
+
+                                e.printStackTrace();
+                            }
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            System.out.println(error.getMessage());
+                            Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    }) {
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<>();
+                    System.out.println(SaveSharedPreference.getPrefCartId(getApplicationContext()));
+                    params.put("CartID", SaveSharedPreference.getPrefCartId(getApplicationContext()));
+                    params.put("ProductID", ProductID);
+                    params.put("Count", "1");
+                    System.out.println(params.get("CartID") +  " " + params.get("ProductID"));
+                    return params;
+                }
+            };
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
+
+
+
     }
 }

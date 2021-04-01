@@ -42,11 +42,11 @@ public class SaveSharedPreference
 
     public static String getPrefBuyerId(Context ctx)
     {
-        return getSharedPreferences(ctx).getString(PREF_BUYER_ID, "");
+        return getSharedPreferences(ctx).getString(PREF_BUYER_ID, "1");
     }
     public static String getPrefCartId(Context ctx)
     {
-        return getSharedPreferences(ctx).getString(PREF_CART_ID, "");
+        return getSharedPreferences(ctx).getString(PREF_CART_ID, "1");
     }
 
 
