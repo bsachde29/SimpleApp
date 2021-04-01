@@ -3,6 +3,7 @@ package com.example.simpleapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ import com.android.volley.toolbox.StringRequest;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -75,6 +77,8 @@ public class CartActivity extends AppCompatActivity {
         } catch (Exception E) {
             E.printStackTrace();
         }
+
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
     }
 
     protected void getProducts(double subTotal) {
@@ -134,6 +138,9 @@ public class CartActivity extends AppCompatActivity {
         } catch (Exception E) {
             E.printStackTrace();
         }
+
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
+
     }
 
     protected void getCart(ArrayList<Product> prodList, double subtotal) {
@@ -178,14 +185,29 @@ public class CartActivity extends AppCompatActivity {
                 }
             };
 
-
         } catch (Exception E) {
             E.printStackTrace();
         }
+
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
     }
 
     protected void updateCart(ArrayList<Product> prodList, ArrayList<Integer> countList, double subTotal) {
         //TODO update everything here
+        try {
+            InputStream ims = getAssets().open("prod_holder.jpg");
+            // load image as Drawable
+            Drawable d = Drawable.createFromStream(ims, null);
+            ims.close();
+
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
     }
 
 
