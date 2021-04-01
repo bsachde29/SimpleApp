@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ALL);
-$buyerID  = $_POST['buyerID'];
+$buyerID  = $_POST['BuyerID'];
 
 $servername = "selldb.cqt5tgj7qyws.us-east-2.rds.amazonaws.com";
 $username = "simpledb";

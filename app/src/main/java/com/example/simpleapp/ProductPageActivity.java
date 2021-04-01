@@ -57,15 +57,16 @@ public class ProductPageActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v)
                 {
-                    /*
-                        Add code here
-                     */
+
                 }
             });
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
 
+    private void addToCart(String ProductID) {
+        String BuyerID =
     }
 }

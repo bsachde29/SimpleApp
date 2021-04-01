@@ -14,17 +14,18 @@ try{
     $stmt = $conn->prepare("SELECT * FROM Cart_Product_Count WHERE CartID = '$cartID'");
     $stmt->execute();
     $cart = $stmt->fetchAll(PDO::FETCH_COLUMN, 1);
-    $prodArray = array();
-    $counter = 0;
-    foreach ($cart[$counter]['ProductID'] as $id) {
-        // echo "$id \n";
-        $stmt2 = $conn->prepare("SELECT * FROM Product WHERE ProductID = '$id' AND isSubProduct = 0");
-        $stmt2->execute();
-        $prodList = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-        $prodArray[$counter] = $prodList;
-        $counter++;
-    }
-    echo json_encode($prodArray);
+    $cartObj = $cart[0];
+//    $prodArray = array();
+//    $counter = 0;
+//    foreach ($cart[$counter]['ProductID'] as $id) {
+//        // echo "$id \n";
+//        $stmt2 = $conn->prepare("SELECT * FROM Product WHERE ProductID = '$id' AND isSubProduct = 0");
+//        $stmt2->execute();
+//        $prodList = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+//        $prodArray[$counter] = $prodList;
+//        $counter++;
+//    }
+    echo json_encode($cartObj);
 
 }
 catch(PDOException$e) {
