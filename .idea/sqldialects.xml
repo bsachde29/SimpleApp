@@ -6,7 +6,6 @@
     <file url="file://$PROJECT_DIR$/php/GetAddress.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/php/Inventory.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/php/RegisterUser.php" dialect="GenericSQL" />
-    <file url="remoteDeploymentFS://&lt;83a919b4-3fc5-4f90-b750-811e2d8e704d&gt;/php/AddProductCart.php" dialect="GenericSQL" />
     <file url="PROJECT" dialect="MySQL" />
   </component>
 </project>

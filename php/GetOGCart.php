@@ -1,8 +1,8 @@
 <?php
 error_reporting(E_ALL);
-//$cartID = $_GET['cartID'];
-
 $cartID = $_POST['cartID'];
+
+//$cartID = $_GET['cartID'];
 
 $servername = "selldb.cqt5tgj7qyws.us-east-2.rds.amazonaws.com";
 $username = "simpledb";
@@ -13,16 +13,14 @@ $dbname = "simpledb";
 try{
     $conn = new PDO("mysql:host=$servername;dbname=$dbname",$username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT * FROM Cart_Product_Count WHERE CartID = '$cartID'");
+    $stmt = $conn->prepare("SELECT * FROM Cart WHERE CartID = '$cartID'");
     $stmt->execute();
     $cart = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $countArray = array();
-    for ($counter = 0; $counter < count($cart); $counter++) {
-        // echo "$id \n";
-        $c = $cart[$counter]['Count'];
-        $countArray[$counter] = $c;
-    }
-    echo json_encode($countArray);
+    //echo $cart[0];
+    $cartObj = $cart[0];
+
+    echo json_encode($cartObj);
+
 }
 catch(PDOException$e) {
     echo "Error: ".$e ->getMessage();

@@ -2,6 +2,8 @@
 error_reporting(E_ALL);
 $cartID = $_POST['cartID'];
 
+//$cartID = $_GET['cartID'];
+
 $servername = "selldb.cqt5tgj7qyws.us-east-2.rds.amazonaws.com";
 $username = "simpledb";
 $password = "sell1234";
@@ -13,8 +15,9 @@ try{
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $conn->prepare("SELECT * FROM Cart_Product_Count WHERE CartID = '$cartID'");
     $stmt->execute();
-    $cart = $stmt->fetchAll(PDO::FETCH_COLUMN, 1);
-    $cartObj = $cart[0];
+    $cart = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    //echo $cart[0];
+    $cartObj = $cart;
 //    $prodArray = array();
 //    $counter = 0;
 //    foreach ($cart[$counter]['ProductID'] as $id) {
