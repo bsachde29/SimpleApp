@@ -13,13 +13,60 @@ public class CartCell {
     TableRow tableRow;
     LinearLayout main_V, imgDeets_H, Deets_V, Buttons_H, qty_H;
     ImageView imageView;
-    TextView title, desc, price, qty;
+    TextView title, price, qty;
     Button qty_inc, qty_dec, delete;
 
 
-    CartCell(Context context,  String Title, String Desc, String Price, Drawable d, String Qty) {
+    CartCell(Context context,  String Title,  String Price, Drawable d, String Qty) {
         qty = new TextView(context);
+        qty_inc = new Button(context);
+        qty_dec = new Button(context);
+
         qty.setText(Qty);
+        qty_inc.setText("+");
+        qty_dec.setText("-");
+
+        qty_H = new LinearLayout(context);
+        qty_H.setOrientation(LinearLayout.HORIZONTAL);
+        qty_H.addView(qty_inc,0);
+        qty_H.addView(qty, 1);
+        qty_H.addView(qty_dec,2);
+
+        delete = new Button(context);
+
+
+        Buttons_H = new LinearLayout(context);
+        Buttons_H.setOrientation(LinearLayout.HORIZONTAL);
+        Buttons_H.addView(qty_H, 0);
+        Buttons_H.addView(delete, 1);
+
+        title=  new TextView(context);
+        price = new TextView(context);
+        title.setText(Title);
+        price.setText("$ " + Price);
+
+        Deets_V = new LinearLayout(context);
+        Deets_V.setOrientation(LinearLayout.VERTICAL);
+        Deets_V.addView(title,0);
+        Deets_V.addView(price, 1);
+
+        imageView = new ImageView(context);
+        imageView.setImageDrawable(d);
+
+        imgDeets_H = new LinearLayout(context);
+        imgDeets_H.setOrientation(LinearLayout.HORIZONTAL);
+
+        imgDeets_H.addView(imageView, 0);
+        imgDeets_H.addView(Deets_V, 1);
+
+        main_V = new LinearLayout(context);
+        main_V.setOrientation(LinearLayout.VERTICAL);
+
+        main_V.addView(imgDeets_H, 0);
+        main_V.addView(Buttons_H, 1);
+
+        tableRow = new TableRow(context);
+        tableRow.addView(main_V);
 
     }
 
