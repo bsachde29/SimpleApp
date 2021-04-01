@@ -22,6 +22,16 @@ public class Constants {
 
     public static final String URL_AddProductCart = ROOT_URL + "AddProductCart.php";
 
+    public static final String URL_GetCart = ROOT_URL + "GetCart.php";
+
+    public static final String URL_GetOGCart = ROOT_URL + "GetOGCart.php";
+
+    public static final String URL_GetCountCart = ROOT_URL + "GetCountCart.php";
+
+    public static final String URL_GetCartProducts = ROOT_URL + "GetCartProducts.php";
+
+
+
 
 
 }
