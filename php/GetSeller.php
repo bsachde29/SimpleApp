@@ -13,8 +13,8 @@ try{
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $conn->prepare("SELECT * FROM Sellers  WHERE SellerID = '$sellerID'");
     $stmt->execute();
-    $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    echo json_encode($orders[0]);
+    $seller = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    echo json_encode($seller[0]);
 }
 catch(PDOException$e) {
     echo "Error: ".$e ->getMessage();
