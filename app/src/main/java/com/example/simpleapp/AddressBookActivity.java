@@ -110,7 +110,6 @@ public class AddressBookActivity extends AppCompatActivity {
         StringRequest stringRequest = null;
 
         this.BuyerID = SaveSharedPreference.getPrefBuyerId(getApplicationContext());
-        System.out.println("currBuyerID: " + BuyerID);
         try {
             stringRequest = new StringRequest(Request.Method.POST,
                     Constants.URL_DeleteAddress,

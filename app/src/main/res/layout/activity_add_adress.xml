@@ -8,60 +8,91 @@
 
     <EditText
         android:id="@+id/AddStreet"
-        android:layout_width="336dp"
-        android:layout_height="40dp"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="28dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Street Address"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="136dp" />
+        app:layout_constraintBottom_toTopOf="@+id/AddApt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/AddApt"
-        android:layout_width="336dp"
-        android:layout_height="40dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="35dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Apt Number"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="204dp" />
+        app:layout_constraintBottom_toTopOf="@+id/AddCity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddStreet" />
 
     <EditText
         android:id="@+id/AddCity"
-        android:layout_width="336dp"
-        android:layout_height="40dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="35dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="City"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="279dp" />
+        app:layout_constraintBottom_toTopOf="@+id/AddState"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddApt" />
 
     <EditText
         android:id="@+id/AddZip"
-        android:layout_width="336dp"
-        android:layout_height="40dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="43dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Zip"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="428dp" />
+        app:layout_constraintBottom_toTopOf="@+id/AddAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddState" />
 
     <EditText
         android:id="@+id/AddState"
-        android:layout_width="336dp"
-        android:layout_height="40dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="34dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="State"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="354dp" />
+        app:layout_constraintBottom_toTopOf="@+id/AddZip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddCity" />
 
     <Button
         android:id="@+id/AddAddress"
-        android:layout_width="337dp"
-        android:layout_height="52dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="168dp"
         android:text="Add"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="511dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddZip" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
