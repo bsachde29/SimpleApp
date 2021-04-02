@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleApp"
         android:usesCleartextTraffic="true">
-        <activity android:name=".SellerDetailsActivity"></activity>
+        <activity android:name=".AddressBoolActivity"></activity>
+        <activity android:name=".SellerDetailsActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".OrderDetailsActivity" />
         <activity
