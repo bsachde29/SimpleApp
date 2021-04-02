@@ -9,18 +9,20 @@ $servername = "selldb.cqt5tgj7qyws.us-east-2.rds.amazonaws.com";
 $username = "simpledb";
 $password = "sell1234";
 $dbname = "simpledb";
-
+//echo "123";
+//fwrite($f, "\npoint 1\n");
 
 try{
     $conn = new PDO("mysql:host=$servername;dbname=$dbname",$username, $password);
-
+    //echo "YAYYYY";
 
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $conn->prepare("SELECT * From Buyers");
     $stmt->execute();
-
+    //echo "\n\n\n\n";
+    //echo $name;
     $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+    //$retVal = $value->qty;
     echo (json_encode($value));
 }
 catch(PDOException$e) {

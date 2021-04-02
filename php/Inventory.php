@@ -17,7 +17,7 @@ try{
     $prodArray = array();
     $counter = 0;
     foreach ($product_temp as $id) {
-        // echo "$id \n";
+       // echo "$id \n";
         $stmt2 = $conn->prepare("SELECT * FROM Product WHERE ProductID = '$id' AND isSubProduct = 0");
         $stmt2->execute();
         $prodList = $stmt2->fetchAll(PDO::FETCH_ASSOC);
