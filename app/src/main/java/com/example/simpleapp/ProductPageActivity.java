@@ -39,8 +39,8 @@ public class ProductPageActivity extends AppCompatActivity {
         this.image = findViewById(R.id.imageView_pp);
 
 
-        SaveSharedPreference.setPrefBuyerId(getApplicationContext(), "1");
-        SaveSharedPreference.setPrefCartId(getApplicationContext(), "1");
+//        SaveSharedPreference.setPrefBuyerId(getApplicationContext(), "1");
+//        SaveSharedPreference.setPrefCartId(getApplicationContext(), "1");
 
         try {
             Intent intent = getIntent();

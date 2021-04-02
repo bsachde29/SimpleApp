@@ -119,8 +119,7 @@ public class LoginActivity extends AppCompatActivity {
                             try {
 
                                 System.out.println("Cart Fetched Successfully");
-                                JSONObject jsonObject = new JSONObject(response);
-                                SaveSharedPreference.setPrefCartId(getApplicationContext(), jsonObject.getString("cartID"));
+                                SaveSharedPreference.setPrefCartId(getApplicationContext(), response.replace("\"", ""));
 
                             } catch (Exception e) {
 
