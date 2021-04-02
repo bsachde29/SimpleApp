@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleApp"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Orders"></activity>
         <activity
             android:name=".CartActivity"
             android:exported="true" />

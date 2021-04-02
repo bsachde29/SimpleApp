@@ -193,7 +193,6 @@ public class CartActivity extends AppCompatActivity {
         } catch (Exception E) {
             E.printStackTrace();
         }
-
         RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
     }
 

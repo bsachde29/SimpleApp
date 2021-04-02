@@ -1,7 +1,9 @@
 package com.example.simpleapp;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -26,6 +28,12 @@ public class CartCell {
         qty_inc.setText("+");
         qty_dec.setText("-");
 
+//        ViewGroup.LayoutParams layoutParams = qty_inc.getLayoutParams();
+//        layoutParams.width = ViewGroup.LayoutParams.WRAP_CONTENT;
+//
+//        ViewGroup.LayoutParams layoutParams2 = qty_dec.getLayoutParams();
+//        layoutParams2.width = ViewGroup.LayoutParams.WRAP_CONTENT;
+
         qty_H = new LinearLayout(context);
         qty_H.setOrientation(LinearLayout.HORIZONTAL);
         qty_H.addView(qty_inc,0);
@@ -33,6 +41,8 @@ public class CartCell {
         qty_H.addView(qty_dec,2);
 
         delete = new Button(context);
+        delete.setText("Delete");
+
 
 
         Buttons_H = new LinearLayout(context);
@@ -44,6 +54,7 @@ public class CartCell {
         price = new TextView(context);
         title.setText(Title);
         price.setText("$ " + Price);
+        price.setTextColor(Color.parseColor("#00b300"));
 
         Deets_V = new LinearLayout(context);
         Deets_V.setOrientation(LinearLayout.VERTICAL);

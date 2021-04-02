@@ -12,8 +12,6 @@
         android:orientation="vertical"
         tools:layout_editor_absoluteX="178dp"
         tools:layout_editor_absoluteY="180dp">
-
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="500dp">
@@ -54,7 +52,7 @@
             android:layout_margin="10dp"
             android:layout_weight="10"
             android:autoText="false"
-            android:background="#DABD66"
+            android:background="#91BD5F"
             android:text="Checkout"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
