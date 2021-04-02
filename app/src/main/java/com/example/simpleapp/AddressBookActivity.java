@@ -59,7 +59,7 @@ public class AddressBookActivity extends AppCompatActivity {
                                     addressCell.delete.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
-
+                                            DeleteAddress(addressID);
                                         }
                                     });
                                     tableLayout = findViewById(R.id.tableLayoutAddressBook);

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ import java.util.Map;
 public class ProductListActivity extends AppCompatActivity {
 
     TableLayout tableLayout;
+    Button cart, addAddress, sellerDetails;
 
 
     @Override
@@ -32,6 +34,41 @@ public class ProductListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_list);
+
+        cart = findViewById(R.id.Gotocart);
+        addAddress = findViewById(R.id.GotoAddAddress);
+        sellerDetails = findViewById(R.id.GotoSellerDetails);
+
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), CartActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        addAddress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), AddressBookActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        sellerDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), SellerDetailsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
+
         StringRequest stringRequest = null;
 //        ProductCell cell1 = null, cell2 = null;
         try {
@@ -110,7 +147,7 @@ public class ProductListActivity extends AppCompatActivity {
                 Exception E) {
             E.printStackTrace();
         }
-
         RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
+
     }
 }
