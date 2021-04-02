@@ -1,39 +1,20 @@
 package com.example.simpleapp;
 
-import android.os.AsyncTask;
+import android.app.ProgressDialog;
 import android.os.Bundle;
-
-import android.app.*;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.view.View;
-
-
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import androidx.appcompat.app.AppCompatActivity;
 
-import java.sql.*;
-import java.util.HashMap;
-import java.util.Map;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Please wait...");
-
 
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -101,14 +81,14 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
                         }
                     }) {
-    //            @Override
-    //            protected Map<String, String> getParams() throws AuthFailureError {
-    //                Map<String, String> params = new HashMap<>();
-    //                params.put("username", username);
-    //                params.put("email", email);
-    //                params.put("password", password);
-    //                return params;
-    //            }
+                //            @Override
+                //            protected Map<String, String> getParams() throws AuthFailureError {
+                //                Map<String, String> params = new HashMap<>();
+                //                params.put("username", username);
+                //                params.put("email", email);
+                //                params.put("password", password);
+                //                return params;
+                //            }
             };
         } catch (Exception e) {
             e.printStackTrace();
@@ -119,8 +99,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
-
 
 
 //    class Async extends AsyncTask<Void, Void, Void> {
@@ -191,7 +169,6 @@ public class MainActivity extends AppCompatActivity {
 //
 //
 //    }
-
 
 
 }

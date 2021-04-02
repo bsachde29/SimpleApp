@@ -21,10 +21,10 @@ public class OrderCell {
         status.setText(Status);
 
         ID_Total_H = new LinearLayout(context);
-        ID_Total_H.addView(orderID,0);
+        ID_Total_H.addView(orderID, 0);
         ID_Total_H.addView(total, 1);
-        main_V.addView(ID_Total_H,0);
-        main_V.addView(status,1);
+        main_V.addView(ID_Total_H, 0);
+        main_V.addView(status, 1);
         tableRow = new TableRow(context);
         tableRow.addView(main_V);
     }

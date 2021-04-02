@@ -3,7 +3,6 @@ package com.example.simpleapp;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -19,7 +18,7 @@ public class CartCell {
     Button qty_inc, qty_dec, delete;
 
 
-    CartCell(Context context,  String Title,  String Price, Drawable d, String Qty) {
+    CartCell(Context context, String Title, String Price, Drawable d, String Qty) {
         qty = new TextView(context);
         qty_inc = new Button(context);
         qty_dec = new Button(context);
@@ -36,13 +35,12 @@ public class CartCell {
 
         qty_H = new LinearLayout(context);
         qty_H.setOrientation(LinearLayout.HORIZONTAL);
-        qty_H.addView(qty_inc,0);
+        qty_H.addView(qty_inc, 0);
         qty_H.addView(qty, 1);
-        qty_H.addView(qty_dec,2);
+        qty_H.addView(qty_dec, 2);
 
         delete = new Button(context);
         delete.setText("Delete");
-
 
 
         Buttons_H = new LinearLayout(context);
@@ -50,7 +48,7 @@ public class CartCell {
         Buttons_H.addView(qty_H, 0);
         Buttons_H.addView(delete, 1);
 
-        title=  new TextView(context);
+        title = new TextView(context);
         price = new TextView(context);
         title.setText(Title);
         price.setText("$ " + Price);
@@ -58,7 +56,7 @@ public class CartCell {
 
         Deets_V = new LinearLayout(context);
         Deets_V.setOrientation(LinearLayout.VERTICAL);
-        Deets_V.addView(title,0);
+        Deets_V.addView(title, 0);
         Deets_V.addView(price, 1);
 
         imageView = new ImageView(context);

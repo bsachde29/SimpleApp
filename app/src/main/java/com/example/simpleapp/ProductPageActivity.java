@@ -1,7 +1,5 @@
 package com.example.simpleapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -11,13 +9,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-
-import org.json.JSONObject;
 
 import java.io.InputStream;
 import java.util.HashMap;
@@ -25,10 +23,9 @@ import java.util.Map;
 
 public class ProductPageActivity extends AppCompatActivity {
 
-    TextView title, desc , price;
+    TextView title, desc, price;
     Button button;
     ImageView image;
-
 
 
     @Override
@@ -48,7 +45,7 @@ public class ProductPageActivity extends AppCompatActivity {
         try {
             Intent intent = getIntent();
 
-            String name =  intent.getStringExtra("Name");
+            String name = intent.getStringExtra("Name");
             String desc = intent.getStringExtra("Description");
             String price = "$ " + intent.getStringExtra("price");
             String ProductID = intent.getStringExtra("ProductID");
@@ -66,11 +63,9 @@ public class ProductPageActivity extends AppCompatActivity {
             this.price.setText(price);
             this.image.setImageDrawable(d);
 
-            button.setOnClickListener(new View.OnClickListener()
-            {
+            button.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v)
-                {
+                public void onClick(View v) {
                     addToCart(ProductID);
                 }
             });
@@ -118,7 +113,7 @@ public class ProductPageActivity extends AppCompatActivity {
                     params.put("CartID", SaveSharedPreference.getPrefCartId(getApplicationContext()));
                     params.put("ProductID", ProductID);
                     params.put("Count", "1");
-                    System.out.println(params.get("CartID") +  " " + params.get("ProductID"));
+                    System.out.println(params.get("CartID") + " " + params.get("ProductID"));
                     return params;
                 }
             };
@@ -128,7 +123,6 @@ public class ProductPageActivity extends AppCompatActivity {
 
 
         RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
-
 
 
     }

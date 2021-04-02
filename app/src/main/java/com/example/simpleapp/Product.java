@@ -3,8 +3,9 @@ package com.example.simpleapp;
 import java.util.ArrayList;
 
 enum inStock {
-    IN_STOCK, OUT_OF_STOCK;
+    IN_STOCK, OUT_OF_STOCK
 }
+
 public class Product {
 
     private String name;
@@ -40,52 +41,52 @@ public class Product {
         return hasSubCategories;
     }
 
-    public inStock getIn_Stock() {
-        return in_Stock;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public int getproductID() {
-        return productID;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public void setHasSubCategories(boolean hasSubCategories) {
         this.hasSubCategories = hasSubCategories;
+    }
+
+    public inStock getIn_Stock() {
+        return in_Stock;
     }
 
     public void setIn_Stock(inStock in_Stock) {
         this.in_Stock = in_Stock;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getproductID() {
+        return productID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setproductID(int productID) {

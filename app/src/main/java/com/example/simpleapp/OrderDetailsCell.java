@@ -17,7 +17,7 @@ public class OrderDetailsCell {
     ImageView imageView;
     TextView title, desc, price, qty;
 
-    OrderDetailsCell(Context ctx, String Title,String Desc, String Price, String Qty, Drawable d) {
+    OrderDetailsCell(Context ctx, String Title, String Desc, String Price, String Qty, Drawable d) {
         tableRow = new TableRow(ctx);
         linearLayoutH = new LinearLayout(ctx);
         linearLayoutV = new LinearLayout(ctx);
@@ -46,7 +46,7 @@ public class OrderDetailsCell {
         linearLayoutH.addView(imageView);
         linearLayoutV.addView(title, 0);
         linearLayoutV.addView(desc, 1);
-        price_qty.addView(price,0);
+        price_qty.addView(price, 0);
         price_qty.addView(qty, 1);
         tableRow.addView(linearLayoutH);
         tableRow.addView(linearLayoutV);
@@ -54,7 +54,6 @@ public class OrderDetailsCell {
 
 
     }
-
 
 
     public void setMargins(View view, int left, int top, int right, int bottom) {

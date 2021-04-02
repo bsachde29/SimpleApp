@@ -1,13 +1,11 @@
 package com.example.simpleapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TableLayout;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -25,10 +23,9 @@ import java.util.Map;
 
 public class CartActivity extends AppCompatActivity {
 
-    private String CartID;
     CartCell cartCell;
     TableLayout tableLayout;
-
+    private String CartID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -204,7 +201,7 @@ public class CartActivity extends AppCompatActivity {
             ims.close();
 
             for (int i = 0; i < prodList.size(); i++) {
-                cartCell = new CartCell(getApplicationContext() ,prodList.get(i).getName(),Double.toString(prodList.get(i).getPrice()), d, countList.get(i).toString());
+                cartCell = new CartCell(getApplicationContext(), prodList.get(i).getName(), Double.toString(prodList.get(i).getPrice()), d, countList.get(i).toString());
                 tableLayout = findViewById(R.id.cart_table);
                 tableLayout.addView(new RowDivider(getApplicationContext()).tableRow);
                 tableLayout.addView(cartCell.tableRow);
@@ -217,8 +214,6 @@ public class CartActivity extends AppCompatActivity {
 
 
     }
-
-
 
 
 }

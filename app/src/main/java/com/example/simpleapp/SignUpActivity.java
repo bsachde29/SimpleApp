@@ -1,7 +1,5 @@
 package com.example.simpleapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -18,7 +18,8 @@ import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONObject;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -74,7 +75,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                             try {
 
-                                System.out.println(response);;
+                                System.out.println(response);
                                 JSONObject jsonObject = new JSONObject(response);
 
                                 Intent intent = new Intent(getBaseContext(), ProductPageActivity.class);
@@ -93,17 +94,17 @@ public class SignUpActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
                         }
                     }) {
-                            @Override
-                            protected Map<String, String> getParams() throws AuthFailureError {
-                                Map<String, String> params = new HashMap<>();
-                                params.put("FirstName", FirstName);
-                                params.put("LastName", LastName);
-                                params.put("Email", Email);
-                                params.put("MobileNum", PhNumber);
-                                params.put("Pswd", Pass);
-                                params.put("SellerID", SellerID);
-                                return params;
-                            }
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<>();
+                    params.put("FirstName", FirstName);
+                    params.put("LastName", LastName);
+                    params.put("Email", Email);
+                    params.put("MobileNum", PhNumber);
+                    params.put("Pswd", Pass);
+                    params.put("SellerID", SellerID);
+                    return params;
+                }
             };
         } catch (Exception e) {
             e.printStackTrace();

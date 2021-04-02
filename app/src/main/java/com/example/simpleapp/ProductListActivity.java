@@ -1,14 +1,13 @@
 package com.example.simpleapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -62,7 +61,7 @@ public class ProductListActivity extends AppCompatActivity {
                                         continue;
                                     }
                                     JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                    String name =  jsonObject.getString("Name");
+                                    String name = jsonObject.getString("Name");
                                     String desc = jsonObject.getString("Description");
                                     String price = jsonObject.getString("price");
                                     String ProductID = jsonObject.getString("ProductID");
@@ -71,11 +70,9 @@ public class ProductListActivity extends AppCompatActivity {
                                             name, desc, price, d);
                                     tableLayout = findViewById(R.id.tableLayoutProdList);
                                     tableLayout.addView(new RowDivider(getApplicationContext()).tableRow);
-                                    cell.tableRow.setOnClickListener(new View.OnClickListener()
-                                    {
+                                    cell.tableRow.setOnClickListener(new View.OnClickListener() {
                                         @Override
-                                        public void onClick(View v)
-                                        {
+                                        public void onClick(View v) {
                                             Intent intent = new Intent(getBaseContext(), ProductPageActivity.class);
                                             intent.putExtra("Name", name);
                                             intent.putExtra("Description", desc);
