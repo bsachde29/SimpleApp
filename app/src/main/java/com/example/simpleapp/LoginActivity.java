@@ -3,6 +3,7 @@ package com.example.simpleapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,7 +43,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 signInUser();
 
-
             }
 
         });
@@ -75,7 +75,8 @@ public class LoginActivity extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(),
                                             "Successfully logged in", Toast.LENGTH_LONG).show();
 
-                                    // TODO Redirect to some page here
+                                    Intent intent = new Intent(getBaseContext(), ProductPageActivity.class);
+                                    startActivity(intent);
 
                                 } catch (Exception e) {
                                     e.printStackTrace();

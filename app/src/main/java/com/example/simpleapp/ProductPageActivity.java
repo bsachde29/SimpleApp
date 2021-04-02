@@ -95,8 +95,8 @@ public class ProductPageActivity extends AppCompatActivity {
 
                             try {
                                 System.out.println(response);
-                                //TODO redirect to cart
-
+                                Intent intent = new Intent(getBaseContext(), CartActivity.class);
+                                startActivity(intent);
 
                             } catch (Exception e) {
 

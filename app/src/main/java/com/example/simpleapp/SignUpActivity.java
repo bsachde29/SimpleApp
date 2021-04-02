@@ -3,6 +3,7 @@ package com.example.simpleapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -73,9 +74,11 @@ public class SignUpActivity extends AppCompatActivity {
 
                             try {
 
-                                email.setText(response);  //TODO change add login successful
+                                System.out.println(response);;  //TODO change add login successful
                                 JSONObject jsonObject = new JSONObject(response);
 
+                                Intent intent = new Intent(getBaseContext(), ProductPageActivity.class);
+                                startActivity(intent);
 
                             } catch (Exception e) {
 
