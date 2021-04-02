@@ -8,7 +8,7 @@
     <EditText
         android:id="@+id/email_su"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="40dp"
         android:layout_marginStart="51dp"
         android:layout_marginTop="141dp"
         android:layout_marginEnd="51dp"
