@@ -30,8 +30,7 @@ public class Constants {
 
     public static final String URL_GetCartProducts = ROOT_URL + "GetCartProducts.php";
 
-
-
+    public static final String URL_GetOrderList = ROOT_URL + "GetOrderList.php";
 
 
 }

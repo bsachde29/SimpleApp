@@ -34,7 +34,7 @@ public class ProductListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_list);
         StringRequest stringRequest = null;
-        ProductCell cell1 = null, cell2 = null;
+//        ProductCell cell1 = null, cell2 = null;
         try {
             InputStream ims = getAssets().open("prod_holder.jpg");
             // load image as Drawable
@@ -115,7 +115,5 @@ public class ProductListActivity extends AppCompatActivity {
         }
 
         RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
-
-
     }
 }
