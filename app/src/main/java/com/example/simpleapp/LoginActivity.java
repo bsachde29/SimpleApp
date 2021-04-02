@@ -24,13 +24,21 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
 
     EditText email, password;
-    Button signIn;
+    Button signIn, signup;
     ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        signup = findViewById(R.id.signin_instead);
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), SignUpActivity.class);
+                startActivity(intent);
+            }
+        });
         email = (EditText) findViewById(R.id.emai_li);
         password = (EditText) findViewById(R.id.password_li);
         signIn = (Button) findViewById(R.id.signin);
