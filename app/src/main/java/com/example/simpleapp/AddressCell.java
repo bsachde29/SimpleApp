@@ -6,7 +6,7 @@ import android.widget.LinearLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-public class AdressCell {
+public class AddressCell {
 
     TableRow tableRow;
     TextView street_lb, city_lb, state_lb, zip_lb, street, city, state, zip;
@@ -14,7 +14,7 @@ public class AdressCell {
     LinearLayout Main_v;
 
 
-    AdressCell(Context context, String Street, String City, String State, String Zip) {
+    AddressCell(Context context, String Street, String City, String State, String Zip) {
         street_lb = new TextView(context);
         street_lb.setText("Street Address: ");
         street = new TextView(context);
