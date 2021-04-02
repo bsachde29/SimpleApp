@@ -1,8 +1,12 @@
 package com.example.simpleapp;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TableLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +29,7 @@ public class CartActivity extends AppCompatActivity {
 
     CartCell cartCell;
     TableLayout tableLayout;
+    Button checkout;
     private String CartID;
 
     @Override
@@ -79,6 +84,8 @@ public class CartActivity extends AppCompatActivity {
         }
 
         RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
+
+
     }
 
     protected void getProducts(double subTotal) {
@@ -207,13 +214,104 @@ public class CartActivity extends AppCompatActivity {
                 tableLayout.addView(cartCell.tableRow);
             }
 
-
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+        TextView subtotal = findViewById(R.id.subtotal_cart);
+        subtotal.setText("$ " + subTotal);
+        checkout = findViewById(R.id.checkoutButton);
+
+
+        checkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addOrder();
+            }
+        });
+
+
+    }
+
+    protected void addOrder() {
+        StringRequest stringRequest = null;
+        String BuyerID = SaveSharedPreference.getPrefBuyerId(getApplicationContext());
+        String CartID = SaveSharedPreference.getPrefCartId(getApplicationContext());
+        try {
+            stringRequest = new StringRequest(Request.Method.POST,
+                    Constants.URL_AddOrder,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            System.out.println("hello");
+                            System.out.println(response);
+                            Intent intent = new Intent(getBaseContext(), ProductListActivity.class);
+                            startActivity(intent);
+                            setPrefCardId();
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            System.out.println(error.getMessage());
+                            Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    }) {
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<>();
+                    params.put("BuyerID", BuyerID);
+                    params.put("CartID", CartID);
+                    return params;
+                }
+            };
+        } catch (Exception E) {
+            E.printStackTrace();
+        }
+
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
+    }
+
+    public void setPrefCardId() {
+        StringRequest stringRequest = null;
+        try {
+            stringRequest = new StringRequest(Request.Method.POST,
+                    Constants.URL_GetCartID,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+
+                            try {
+                                System.out.println(response);
+                                System.out.println("Cart Fetched Successfully");
+                                SaveSharedPreference.setPrefCartId(getApplicationContext(), response.replace("\"", ""));
+
+                            } catch (Exception e) {
+
+                                e.printStackTrace();
+                            }
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            System.out.println(error.getMessage());
+                            Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    }) {
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<>();
+                    params.put("BuyerID", SaveSharedPreference.getPrefBuyerId(getApplicationContext()));
+                    return params;
+                }
+            };
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
 
     }
 

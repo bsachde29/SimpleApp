@@ -38,4 +38,7 @@ public class Constants {
     public static final String URL_AddAddress = ROOT_URL + "AddAddress.php";
 
     public static final String URL_DeleteAddress = ROOT_URL + "DeleteAddress.php";
+
+    public static final String URL_AddOrder = ROOT_URL + "AddOrder.php";
+
 }

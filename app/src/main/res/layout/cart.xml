@@ -39,14 +39,14 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="$ 27"
+                android:text="$ 00"
                 android:textColor="#4C834F"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/checkoutButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"

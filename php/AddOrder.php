@@ -50,6 +50,7 @@ try{
             $stmt6->execute();
             $stmt7 = $conn->prepare("INSERT INTO Cart (BuyerID, FirstName, LastName, Email, MobileNum) 
             VALUES ('$buyerID', '$firstName', '$lastName', '$email', '$mobileNum'");
+            echo $stmt7;
             $stmt7->execute();
         }
     }
