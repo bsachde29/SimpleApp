@@ -86,6 +86,8 @@ public class CartActivity extends AppCompatActivity {
 
     protected void getProducts(double subTotal) {
 
+        System.out.println(CartID);
+
         StringRequest stringRequest = null;
         try {
             stringRequest = new StringRequest(Request.Method.POST,
@@ -196,7 +198,6 @@ public class CartActivity extends AppCompatActivity {
     }
 
     protected void updateCart(ArrayList<Product> prodList, ArrayList<Integer> countList, double subTotal) {
-        //TODO update everything here
         try {
             InputStream ims = getAssets().open("prod_holder.jpg");
             // load image as Drawable
@@ -204,14 +205,11 @@ public class CartActivity extends AppCompatActivity {
             ims.close();
 
             for (int i = 0; i < prodList.size(); i++) {
-                cartCell = new CartCell(getApplicationContext() ,prodList.get(i).getName(),Double.toString(prodList.get(i).getPrice()), d, Double.toString(prodList.get(i).getPrice()));
+                cartCell = new CartCell(getApplicationContext() ,prodList.get(i).getName(),Double.toString(prodList.get(i).getPrice()), d, countList.get(i).toString());
                 tableLayout = findViewById(R.id.cart_table);
                 tableLayout.addView(new RowDivider(getApplicationContext()).tableRow);
                 tableLayout.addView(cartCell.tableRow);
             }
-
-
-
 
 
         } catch (Exception e) {

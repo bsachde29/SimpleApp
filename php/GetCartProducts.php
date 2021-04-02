@@ -1,8 +1,8 @@
 <?php
 error_reporting(E_ALL);
-$cartID = $_POST['cartID'];
+//$cartID = $_POST['cartID'];
 
-//$cartID = $_GET['cartID'];
+$cartID = $_POST['CartID'];
 
 $servername = "selldb.cqt5tgj7qyws.us-east-2.rds.amazonaws.com";
 $username = "simpledb";
