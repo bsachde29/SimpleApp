@@ -31,5 +31,7 @@ public class Constants {
 
     public static final String URL_GetOrder = ROOT_URL + "GetOrder.php";
 
+    public static final String URL_GetSeller = ROOT_URL + "GetSeller.php";
+
 
 }
