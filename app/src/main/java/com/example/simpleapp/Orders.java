@@ -67,12 +67,12 @@ public class Orders extends AppCompatActivity {
 
                                     cell = new OrderCell(getApplicationContext(),
                                             orderID, total, ProductID);
-                                    tableLayout = findViewById(R.id.tableLayoutProdList); //TODO change this
+                                    tableLayout = findViewById(R.id.orders_table);
                                     tableLayout.addView(new RowDivider(getApplicationContext()).tableRow);
                                     cell.tableRow.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
-                                            Intent intent = new Intent(getBaseContext(), ProductPageActivity.class); //TODO change activity to particular view
+                                            Intent intent = new Intent(getBaseContext(), OrderDetailsActivity.class);
                                             intent.putExtra("OrderID", orderID);
                                             startActivity(intent);
                                         }
