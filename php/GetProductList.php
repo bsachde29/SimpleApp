@@ -21,7 +21,7 @@ try{
         $stmt2 = $conn->prepare("SELECT * FROM Product WHERE ProductID = '$id'");
         $stmt2->execute();
         $prodList = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-        $prodArray[$counter] = $prodList;
+        $prodArray[$counter] = $prodList[0];
     }
     echo json_encode($prodArray);
 }

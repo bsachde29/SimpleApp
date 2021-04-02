@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ALL);
-$orderID = $_GET['OrderID'];
+$orderID = $_POST['OrderID'];
 
 //$cartID = $_GET['cartID'];
 
