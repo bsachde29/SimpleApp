@@ -12,9 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleApp"
         android:usesCleartextTraffic="true">
-        <activity android:name=".OrderDetailsActivity"></activity>
-        <activity android:name=".Orders"
-            android:exported="true"/>
+        <activity android:name=".SellerDetailsActivity"></activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".OrderDetailsActivity" />
+        <activity
+            android:name=".Orders"
+            android:exported="true" />
         <activity
             android:name=".CartActivity"
             android:exported="true" />

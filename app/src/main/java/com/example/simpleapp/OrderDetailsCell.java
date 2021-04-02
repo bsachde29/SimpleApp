@@ -35,6 +35,10 @@ public class OrderDetailsCell {
         desc.setMaxWidth(400);
         imageView.setImageDrawable(d);
 
+
+
+
+        linearLayoutV.setMinimumWidth(700);
         setMargins((ViewGroup) tableRow, 10, 20, 8, 8);
         tableRow.setBackgroundColor(Color.parseColor("#ffffff"));
         tableRow.setPadding(3, 30, 3, 30);
@@ -50,6 +54,7 @@ public class OrderDetailsCell {
         price_qty.addView(qty, 1);
         tableRow.addView(linearLayoutH);
         tableRow.addView(linearLayoutV);
+
         tableRow.addView(price_qty);
 
 

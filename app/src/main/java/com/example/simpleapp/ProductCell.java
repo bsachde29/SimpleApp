@@ -29,7 +29,7 @@ public class ProductCell {
         title.setText(Title);
         price.setText("$ " + Price);
         desc.setText(Desc);
-        desc.setMaxWidth(400);
+        desc.setMaxWidth(700);
         imageView.setImageDrawable(d);
 
         setMargins((ViewGroup) tableRow, 10, 20, 8, 8);

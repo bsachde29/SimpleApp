@@ -14,14 +14,17 @@ public class OrderCell {
 
     OrderCell(Context context, String OrderID, String Total, String Status) {
         orderID = new TextView(context);
-        orderID.setText(OrderID);
+        orderID.setText("Order ID: " + OrderID);
+        orderID.setMinWidth(700);
         total = new TextView(context);
-        total.setText(Total);
+        total.setText("Total: $ " + Total);
         status = new TextView(context);
-        status.setText(Status);
+        status.setText("Order Status: " + Status);
         main_V = new LinearLayout(context);
         main_V.setOrientation(LinearLayout.VERTICAL);
         ID_Total_H = new LinearLayout(context);
+        ID_Total_H.setMinimumHeight(80);
+        status.setMinHeight(100);
         ID_Total_H.setOrientation(LinearLayout.HORIZONTAL);
         ID_Total_H.addView(orderID, 0);
         ID_Total_H.addView(total, 1);
