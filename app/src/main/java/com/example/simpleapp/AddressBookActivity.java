@@ -24,7 +24,7 @@ import java.util.Map;
 public class AddressBookActivity extends AppCompatActivity {
 
     TableLayout tableLayout;
-    Button add
+    Button add;
     private String BuyerID;
 
     @Override
