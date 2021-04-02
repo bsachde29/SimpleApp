@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ import java.util.Map;
 public class AddressBookActivity extends AppCompatActivity {
 
     TableLayout tableLayout;
+    Button add
     private String BuyerID;
 
     @Override
@@ -30,6 +32,14 @@ public class AddressBookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_address_book);
         StringRequest stringRequest = null;
+        add = findViewById(R.id.AddAddressFromBook);
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), AddAdressActivity.class);
+                startActivity(intent);
+            }
+        });
 
         this.BuyerID = SaveSharedPreference.getPrefBuyerId(getApplicationContext());
         System.out.println("currBuyerID: " + BuyerID);
