@@ -13,7 +13,8 @@
         android:theme="@style/Theme.SimpleApp"
         android:usesCleartextTraffic="true">
         <activity android:name=".OrderDetailsActivity"></activity>
-        <activity android:name=".Orders" />
+        <activity android:name=".Orders"
+            android:exported="true"/>
         <activity
             android:name=".CartActivity"
             android:exported="true" />

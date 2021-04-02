@@ -30,7 +30,7 @@ public class OrderDetailsCell {
         price.setText("$ " + Price);
         qty.setText("Qty: " + Qty);
         price_qty = new LinearLayout(ctx);
-        price_qty.setOrientation(LinearLayout.HORIZONTAL);
+        price_qty.setOrientation(LinearLayout.VERTICAL);
         desc.setText(Desc);
         desc.setMaxWidth(400);
         imageView.setImageDrawable(d);

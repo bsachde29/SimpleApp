@@ -19,8 +19,10 @@ public class OrderCell {
         total.setText(Total);
         status = new TextView(context);
         status.setText(Status);
-
+        main_V = new LinearLayout(context);
+        main_V.setOrientation(LinearLayout.VERTICAL);
         ID_Total_H = new LinearLayout(context);
+        ID_Total_H.setOrientation(LinearLayout.HORIZONTAL);
         ID_Total_H.addView(orderID, 0);
         ID_Total_H.addView(total, 1);
         main_V.addView(ID_Total_H, 0);

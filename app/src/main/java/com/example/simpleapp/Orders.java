@@ -43,7 +43,6 @@ public class Orders extends AppCompatActivity {
             Drawable d = Drawable.createFromStream(ims, null);
             ims.close();
 
-            final String SellerID = Integer.toString(Constants.Seller_ID);
 
             stringRequest = new StringRequest(Request.Method.POST,
                     Constants.URL_GetOrderList,
@@ -63,10 +62,10 @@ public class Orders extends AppCompatActivity {
                                     JSONObject jsonObject = jsonArray.getJSONObject(i);
                                     String orderID = jsonObject.getString("OrderID");
                                     String total = jsonObject.getString("totalPrice");
-                                    String ProductID = (jsonObject.getString("Status").equals("0")) ? "ACCEPTED" : "NOT ACCEPTED";
+                                    String orderAccept = (jsonObject.getString("OrderAccept").equals("0")) ? "ACCEPTED" : "NOT ACCEPTED";
 
                                     cell = new OrderCell(getApplicationContext(),
-                                            orderID, total, ProductID);
+                                            orderID, total, orderAccept);
                                     tableLayout = findViewById(R.id.orders_table);
                                     tableLayout.addView(new RowDivider(getApplicationContext()).tableRow);
                                     cell.tableRow.setOnClickListener(new View.OnClickListener() {
