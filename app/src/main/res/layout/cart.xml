@@ -20,12 +20,13 @@
             android:layout_height="650dp">
 
             <TableLayout
+                android:id="@+id/cart_table"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent">
 
                     <LinearLayout
                         android:id="@+id/main_cart_cell"
@@ -97,6 +98,7 @@
                                     android:layout_weight="1"
                                     android:text="Button" />
                             </LinearLayout>
+
                             <Button
 
                                 android:layout_width="wrap_content"

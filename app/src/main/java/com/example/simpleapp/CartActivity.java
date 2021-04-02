@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TableLayout;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -25,6 +26,8 @@ import java.util.Map;
 public class CartActivity extends AppCompatActivity {
 
     private String CartID;
+    CartCell cartCell;
+    TableLayout tableLayout;
 
 
     @Override
@@ -199,6 +202,14 @@ public class CartActivity extends AppCompatActivity {
             // load image as Drawable
             Drawable d = Drawable.createFromStream(ims, null);
             ims.close();
+
+            for (int i = 0; i < prodList.size(); i++) {
+                cartCell = new CartCell(getApplicationContext() ,prodList.get(i).getName(),Double.toString(prodList.get(i).getPrice()), d, Double.toString(prodList.get(i).getPrice()));
+                tableLayout = findViewById(R.id.cart_table);
+                tableLayout.addView(new RowDivider(getApplicationContext()).tableRow);
+                tableLayout.addView(cartCell.tableRow);
+            }
+
 
 
 
