@@ -33,5 +33,9 @@ public class Constants {
 
     public static final String URL_GetSeller = ROOT_URL + "GetSeller.php";
 
+    public static final String URL_GetAddress = ROOT_URL + "GetAddress.php";
 
+    public static final String URL_AddAddress = ROOT_URL + "AddAddress.php";
+
+    public static final String URL_DeleteAddress = ROOT_URL + "DeleteAddress.php";
 }
