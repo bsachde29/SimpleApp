@@ -74,7 +74,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                             try {
 
-                                System.out.println(response);;  //TODO change add login successful
+                                System.out.println(response);;
                                 JSONObject jsonObject = new JSONObject(response);
 
                                 Intent intent = new Intent(getBaseContext(), ProductPageActivity.class);
