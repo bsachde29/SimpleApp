@@ -6,6 +6,7 @@ $email = $_POST['Email'];
 $mobileNum = $_POST['MobileNum'];
 $pswd = $_POST['Pswd'];
 $sellerId = $_POST['SellerID'];
+$SecAns = $_POST['SecAns'];
 
 $servername = "selldb.cqt5tgj7qyws.us-east-2.rds.amazonaws.com";
 $username = "simpledb";
@@ -16,7 +17,7 @@ $dbname = "simpledb";
 try{
     $conn = new PDO("mysql:host=$servername;dbname=$dbname",$username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("insert into Buyers (FirstName, LastName, Email, MobileNum, Pswd, SellerID) VALUES ('$firstName', '$lastName', '$email', '$mobileNum', '$pswd', '$sellerId')");
+    $stmt = $conn->prepare("insert into Buyers (FirstName, LastName, Email, MobileNum, Pswd, SellerID, SecAns) VALUES ('$firstName', '$lastName', '$email', '$mobileNum', '$pswd', '$sellerId','$SecAns')");
 
     $stmt->execute();
     $stmt2 = $conn->prepare("SELECT BuyerID from Buyers where Email = '$email'");
