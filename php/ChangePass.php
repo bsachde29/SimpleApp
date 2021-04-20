@@ -4,9 +4,9 @@ error_reporting(E_ALL);
 //$pass = $_POST['Pswd'];
 //$SecAns = $_POST['SecAns'];
 
-$buyerID = $_GET['BuyerID'];
-$pass = $_GET['Pswd'];
-$SecAns = $_GET['SecAns'];
+$buyerID = $_POST['BuyerID'];
+$pass = $_POST['Pswd'];
+$SecAns = $_POST['SecAns'];
 
 $servername = "selldb.cqt5tgj7qyws.us-east-2.rds.amazonaws.com";
 $username = "simpledb";
