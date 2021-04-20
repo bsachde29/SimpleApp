@@ -11,7 +11,7 @@ $dbname = "simpledb";
 try{
     $conn = new PDO("mysql:host=$servername;dbname=$dbname",$username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT * FROM Product WHERE Name like '%{$searchName}%'");
+    $stmt = $conn->prepare("SELECT * FROM Product WHERE Name like '%{$searchName}%' OR Description like '%{$searchName}%'");
     $stmt->execute();
     $order = $stmt->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode($order);
