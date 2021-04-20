@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ALL);
-$searchName = $_GET['searchName'];
+$searchName = $_POST['searchName'];
 
 $servername = "selldb.cqt5tgj7qyws.us-east-2.rds.amazonaws.com";
 $username = "simpledb";
@@ -14,7 +14,7 @@ try{
     $stmt = $conn->prepare("SELECT * FROM Product WHERE Name like '%{$searchName}%'");
     $stmt->execute();
     $order = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    echo json_encode($order[0]);
+    echo json_encode($order);
 }
 catch(PDOException$e) {
     echo "Error: ".$e ->getMessage();
