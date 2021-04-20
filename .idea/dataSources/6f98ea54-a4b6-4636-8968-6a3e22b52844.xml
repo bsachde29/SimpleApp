@@ -884,8 +884,6 @@
     </user>
     <user id="279" parent="1" name="mysql.session">
       <Host>localhost</Host>
-      <ObjectGrants>SUPER
-</ObjectGrants>
     </user>
     <user id="280" parent="1" name="mysql.sys">
       <Host>localhost</Host>
