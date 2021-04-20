@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        signup = findViewById(R.id.signin_instead);
+        signup = findViewById(R.id.signup_instead);
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,13 +78,9 @@ public class LoginActivity extends AppCompatActivity {
 
                                     JSONObject jsonObject = new JSONObject(response);
                                     String BuyerID = (String) jsonObject.get("BuyerID");
+                                    System.out.println(BuyerID);
                                     SaveSharedPreference.setPrefBuyerId(getApplicationContext(), BuyerID);
                                     setPrefCardId();
-                                    Toast.makeText(getApplicationContext(),
-                                            "Successfully logged in", Toast.LENGTH_LONG).show();
-
-                                    Intent intent = new Intent(getBaseContext(), ProductPageActivity.class);
-                                    startActivity(intent);
 
                                 } catch (Exception e) {
                                     e.printStackTrace();
@@ -123,11 +119,14 @@ public class LoginActivity extends AppCompatActivity {
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-
                             try {
-
                                 System.out.println("Cart Fetched Successfully");
                                 SaveSharedPreference.setPrefCartId(getApplicationContext(), response.replace("\"", ""));
+                                Toast.makeText(getApplicationContext(),
+                                        "Successfully logged in", Toast.LENGTH_LONG).show();
+
+                                Intent intent = new Intent(getBaseContext(), ProductListActivity.class);
+                                startActivity(intent);
 
                             } catch (Exception e) {
 
@@ -149,12 +148,9 @@ public class LoginActivity extends AppCompatActivity {
                     return params;
                 }
             };
+            RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
-
     }
 }

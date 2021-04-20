@@ -35,6 +35,8 @@ public class Orders extends AppCompatActivity {
 
         BuyerID = SaveSharedPreference.getPrefBuyerId(getApplicationContext());
 
+        System.out.println("buyer ID in order: " + BuyerID);
+
         StringRequest stringRequest = null;
 
         try {

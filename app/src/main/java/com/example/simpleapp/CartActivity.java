@@ -245,8 +245,6 @@ public class CartActivity extends AppCompatActivity {
                         public void onResponse(String response) {
                             System.out.println("hello");
                             System.out.println(response);
-                            Intent intent = new Intent(getBaseContext(), ProductListActivity.class);
-                            startActivity(intent);
                             setPrefCardId();
                         }
                     },
@@ -285,7 +283,8 @@ public class CartActivity extends AppCompatActivity {
                                 System.out.println(response);
                                 System.out.println("Cart Fetched Successfully");
                                 SaveSharedPreference.setPrefCartId(getApplicationContext(), response.replace("\"", ""));
-
+                                Intent intent = new Intent(getBaseContext(), ProductListActivity.class);
+                                startActivity(intent);
                             } catch (Exception e) {
 
                                 e.printStackTrace();

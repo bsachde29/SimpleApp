@@ -48,9 +48,8 @@ try{
             $stmt5->execute();
             $stmt6 = $conn->prepare("DELETE FROM Cart WHERE CartID = '$cartID'");
             $stmt6->execute();
-            $stmt7 = $conn->prepare("INSERT INTO Cart (BuyerID, FirstName, LastName, Email, MobileNum) 
-            VALUES ('$buyerID', '$firstName', '$lastName', '$email', '$mobileNum'");
-            echo $stmt7;
+            $stmt7 = $conn->prepare("INSERT INTO Cart (BuyerID, totalPrice, FirstName, LastName, Email, MobileNum) 
+                VALUES ('$buyerID', '0.0' , '$firstName', '$lastName', '$email', '$mobileNum')");
             $stmt7->execute();
         }
     }

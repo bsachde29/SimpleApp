@@ -84,9 +84,8 @@ public class SignUpActivity extends AppCompatActivity {
                             try {
 
                                 System.out.println(response);
-                                JSONObject jsonObject = new JSONObject(response);
 
-                                Intent intent = new Intent(getBaseContext(), ProductPageActivity.class);
+                                Intent intent = new Intent(getBaseContext(), LoginActivity.class);
                                 startActivity(intent);
 
                             } catch (Exception e) {
