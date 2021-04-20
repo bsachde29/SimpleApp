@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleApp"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AddAdressActivity"></activity>
+        <activity android:name=".SearchActivity2"></activity>
+        <activity android:name=".AddAdressActivity" />
         <activity android:name=".AddressBookActivity" />
         <activity android:name=".SellerDetailsActivity" />
         <activity android:name=".ProfileActivity" />
@@ -27,7 +28,9 @@
         <activity
             android:name=".ProductListActivity"
             android:exported="true" />
-        <activity android:name=".LoginActivity" android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
         <activity
             android:name=".SignUpActivity"
             android:exported="true" />
