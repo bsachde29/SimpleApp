@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 public class SaveSharedPreference {
+
     static final String PREF_BUYER_ID = "";
     static final String PREF_CART_ID = "";
 
@@ -26,7 +27,7 @@ public class SaveSharedPreference {
 
 
     public static String getPrefBuyerId(Context ctx) {
-        return ("1");
+        return getSharedPreferences(ctx).getString(PREF_BUYER_ID, "1");
     }
 
     public static String getPrefCartId(Context ctx) {

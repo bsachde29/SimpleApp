@@ -41,17 +41,25 @@ public class SearchActivity2 extends AppCompatActivity {
         tableLayout = findViewById(R.id.searchTable);
 
 
-        try {
-            InputStream ims = getAssets().open("prod_holder.jpg");
-            // load image as Drawable
-            Drawable d = Drawable.createFromStream(ims, null);
-            ims.close();
-            ProductCell cell = null;
-            cell = new ProductCell(getApplicationContext(), "name", "desc", "price", d);
-            tableLayout.addView(cell.tableRow);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            InputStream ims = getAssets().open("prod_holder.jpg");
+//            // load image as Drawable
+//            Drawable d = Drawable.createFromStream(ims, null);
+//            ims.close();
+//            ProductCell cell = null;
+//            cell = new ProductCell(getApplicationContext(), "name", "desc", "price", d);
+//            tableLayout.addView(cell.tableRow);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
+
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addProductsToPage();
+            }
+        });
 
 
     }
@@ -91,7 +99,6 @@ public class SearchActivity2 extends AppCompatActivity {
 
                                     cell = new ProductCell(getApplicationContext(),
                                             name, desc, price, d);
-                                    tableLayout = findViewById(R.id.tableLayoutProdList);
                                     tableLayout.addView(new RowDivider(getApplicationContext()).tableRow);
                                     cell.tableRow.setOnClickListener(new View.OnClickListener() {
                                         @Override

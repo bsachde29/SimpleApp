@@ -79,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
                                     JSONObject jsonObject = new JSONObject(response);
                                     String BuyerID = (String) jsonObject.get("BuyerID");
                                     System.out.println(BuyerID);
-                                    SaveSharedPreference.setPrefBuyerId(getApplicationContext(), BuyerID);
+                                    SaveSharedPreference.setPrefBuyerId(getBaseContext(), BuyerID);
                                     setPrefCardId();
 
                                 } catch (Exception e) {
@@ -121,7 +121,7 @@ public class LoginActivity extends AppCompatActivity {
                         public void onResponse(String response) {
                             try {
                                 System.out.println("Cart Fetched Successfully");
-                                SaveSharedPreference.setPrefCartId(getApplicationContext(), response.replace("\"", ""));
+                                SaveSharedPreference.setPrefCartId(getBaseContext(), response.replace("\"", ""));
                                 Toast.makeText(getApplicationContext(),
                                         "Successfully logged in", Toast.LENGTH_LONG).show();
 
