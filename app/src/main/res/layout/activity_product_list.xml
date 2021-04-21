@@ -46,7 +46,7 @@
                     android:id="@+id/Gotocart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cart" />
+                    android:text="@string/fa_icon_cart" />
             </LinearLayout>
 
             <LinearLayout
@@ -99,7 +99,7 @@
                         android:id="@+id/gotoSearch"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Search" />
+                        android:text="@string/fa_icon_search" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -109,7 +109,7 @@
 
                     <Button
                         android:id="@+id/button2"
-                        android:layout_width="72dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Button" />
