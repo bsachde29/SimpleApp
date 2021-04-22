@@ -20,6 +20,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.InputStream;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -92,7 +93,12 @@ public class ProductListActivity extends AppCompatActivity {
         try {
             InputStream ims = getAssets().open("prod_holder.jpg");
             // load image as Drawable
-            Drawable d = Drawable.createFromStream(ims, null);
+            //Drawable d = Drawable.createFromStream(ims, null);
+
+                InputStream is = (InputStream) new URL("https://hbr.org/resources/images/article_assets/2019/11/Nov19_14_sb10067951dd-001.jpg").getContent();
+                Drawable d = Drawable.createFromStream(is, "src name");
+                //return d;
+
             ims.close();
 
             final String SellerID = Integer.toString(Constants.Seller_ID);
