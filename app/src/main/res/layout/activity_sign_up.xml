@@ -7,108 +7,134 @@
 
     <EditText
         android:id="@+id/email_su"
-        android:layout_width="0dp"
+        android:layout_width="309dp"
         android:layout_height="40dp"
         android:layout_marginStart="51dp"
-        android:layout_marginTop="141dp"
+        android:layout_marginTop="120dp"
         android:layout_marginEnd="51dp"
-        android:layout_marginBottom="452dp"
-        android:background="#EAEAEA"
-        android:hint="Email"
-        app:layout_constraintBottom_toTopOf="@+id/signin_instead"
+
+        android:inputType="textPersonName"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:hint="Email"
+
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/phNumber_su"
-        android:layout_width="0dp"
-        android:layout_height="27dp"
+        android:layout_width="309dp"
+        android:layout_height="40dp"
         android:layout_marginStart="51dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="51dp"
-        android:layout_marginBottom="45dp"
-        android:background="#EAEAEA"
-        android:hint="Mobile Number"
-        app:layout_constraintBottom_toTopOf="@+id/pass_su"
+
+        android:inputType="textPersonName"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lastName_su" />
+        android:hint="Mobile Number"
+
+        app:layout_constraintTop_toBottomOf="@+id/firstName_su" />
 
     <EditText
         android:id="@+id/pass_su"
-        android:layout_width="0dp"
-        android:layout_height="27dp"
+        android:layout_width="309dp"
+        android:layout_height="40dp"
         android:layout_marginStart="51dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="51dp"
-        android:layout_marginBottom="49dp"
-        android:background="#EAEAEA"
-        android:hint="Password"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/pass_su2"
+
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:hint="Password"
+        android:inputType="textPassword"
+
         app:layout_constraintTop_toBottomOf="@+id/phNumber_su" />
 
     <EditText
         android:id="@+id/pass_su2"
-        android:layout_width="0dp"
-        android:layout_height="27dp"
+        android:layout_width="309dp"
+        android:layout_height="40dp"
         android:layout_marginStart="51dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="51dp"
-        android:layout_marginBottom="68dp"
-        android:background="#EAEAEA"
-        android:hint="Re-type Password"
+
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/signup"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:hint="Re-type Password"
         app:layout_constraintTop_toBottomOf="@+id/pass_su" />
 
     <EditText
         android:id="@+id/firstName_su"
-        android:layout_width="0dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="53dp"
-        android:layout_marginEnd="55dp"
-        android:background="#EDEDED"
+        android:layout_width="126dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="15dp"
+
+        android:inputType="textPersonName"
+
+        app:layout_constraintStart_toStartOf="parent"
+
         android:hint="First Name"
-        app:layout_constraintBaseline_toBaselineOf="@+id/lastName_su"
-        app:layout_constraintEnd_toStartOf="@+id/lastName_su"
-        app:layout_constraintStart_toStartOf="parent" />
+
+        app:layout_constraintTop_toBottomOf="@+id/email_su" />
 
     <EditText
         android:id="@+id/lastName_su"
-        android:layout_width="0dp"
-        android:layout_height="27dp"
+        android:layout_width="126dp"
+        android:layout_height="40dp"
         android:layout_marginEnd="51dp"
-        android:layout_marginBottom="41dp"
-        android:background="#EDEDED"
+        android:layout_marginTop="15dp"
+
+        android:inputType="textPersonName"
+
         android:hint="Last Name"
-        app:layout_constraintBottom_toTopOf="@+id/phNumber_su"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/firstName_su"
         app:layout_constraintTop_toBottomOf="@+id/email_su" />
 
     <Button
         android:id="@+id/signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="157dp"
+        android:layout_marginTop="100dp"
+        android:background="#4CAF50"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="Sign Up"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass_su2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
     <Button
         android:id="@+id/signin_instead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="63dp"
         android:text="Already a user? Sign in"
+        android:background="#4CAF50"
+        android:fontFamily="sans-serif-condensed-medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_su" />
+        app:layout_constraintTop_toBottomOf="@+id/signup" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="309dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="51dp"
+
+        android:Hint="Mother's maiden name"
+
+        android:ems="10"
+        android:hint="Mother's maiden name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pass_su2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
