@@ -45,7 +45,7 @@ public class UserProfileActivity extends AppCompatActivity {
     void populateFields() {
 
         final String buyerID = SaveSharedPreference.getPrefBuyerId(getBaseContext());
-
+       // final String buyerID ="2";
         StringRequest stringRequest = null;
         try {
             stringRequest = new StringRequest(Request.Method.POST,
