@@ -5,4 +5,7 @@
     <string name="fa_icon_linechart">&#xf201;</string>
     <string name="fa_icon_search">&#xf002;</string>
     <string name="fa_icon_cart">&#xf07a;</string>
+    <string name="fa_list">&#xf03a;</string>
+    <string name="fa_User">&#xf007;</string>
+    <string name="fa_key">&#xf084;</string>
 </resources>

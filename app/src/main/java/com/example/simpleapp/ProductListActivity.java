@@ -38,7 +38,7 @@ public class ProductListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_product_list);
 
         Typeface iconFont = FontManager.getTypeface(getApplicationContext(), FontManager.FONTAWESOME);
-        FontManager.markAsIconContainer(findViewById(R.id.tableLayoutProdList), iconFont);
+        FontManager.markAsIconContainer(findViewById(R.id.tabBar), iconFont);
 
 
         cart = findViewById(R.id.Gotocart);
@@ -96,9 +96,10 @@ public class ProductListActivity extends AppCompatActivity {
             // load image as Drawable
             //Drawable d = Drawable.createFromStream(ims, null);
 
-                InputStream is = (InputStream) new URL("https://hbr.org/resources/images/article_assets/2019/11/Nov19_14_sb10067951dd-001.jpg").getContent();
-                Drawable d = Drawable.createFromStream(is, "src name");
-                //return d;
+
+            // load image as Drawable
+            Drawable d = Drawable.createFromStream(ims, null);
+            ims.close();
 
             ims.close();
 
