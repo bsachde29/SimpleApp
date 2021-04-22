@@ -1,6 +1,7 @@
 package com.example.simpleapp;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -35,6 +36,10 @@ public class ProductListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_list);
+
+        Typeface iconFont = FontManager.getTypeface(getApplicationContext(), FontManager.FONTAWESOME);
+        FontManager.markAsIconContainer(findViewById(R.id.tableLayoutProdList), iconFont);
+
 
         cart = findViewById(R.id.Gotocart);
         addAddress = findViewById(R.id.GotoAddAddress);
@@ -82,10 +87,6 @@ public class ProductListActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
-
 
 
         StringRequest stringRequest = null;

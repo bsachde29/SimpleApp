@@ -3,6 +3,7 @@ package com.example.simpleapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -36,10 +37,12 @@ public class SearchActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search2);
 
+        Typeface iconFont = FontManager.getTypeface(getApplicationContext(), FontManager.FONTAWESOME);
+        FontManager.markAsIconContainer(findViewById(R.id.searchTable), iconFont);
+
         keyword = findViewById(R.id.searchBox);
         searchButton = findViewById(R.id.searchButton);
         tableLayout = findViewById(R.id.searchTable);
-
 
 //        try {
 //            InputStream ims = getAssets().open("prod_holder.jpg");
@@ -52,7 +55,7 @@ public class SearchActivity2 extends AppCompatActivity {
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
-
+//
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
