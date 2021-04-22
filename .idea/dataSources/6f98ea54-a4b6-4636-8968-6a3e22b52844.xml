@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="simpledb@selldb.cqt5tgj7qyws.us-east-2.rds.amazonaws.com">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.20">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.19">
     <root id="1">
       <ServerVersion>8.0.20</ServerVersion>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -1117,9 +1117,9 @@
       <ColNames>DiscountCode</ColNames>
       <UnderlyingIndexName>Discount_DiscountCode_uindex</UnderlyingIndexName>
     </key>
-    <column id="338" parent="288" name="Accept">
+    <column id="338" parent="288" name="OrderID">
       <Position>1</Position>
-      <DataType>tinyint(1)|0s</DataType>
+      <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="339" parent="288" name="NotificationID">
