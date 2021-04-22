@@ -23,7 +23,7 @@ import java.util.Map;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    EditText email, password, repassword, firstName, lastName, phNumber;
+    EditText email, password, repassword, firstName, lastName, phNumber, secAns;
     Button signup, signin;
     ProgressDialog progressDialog;
 
@@ -46,6 +46,7 @@ public class SignUpActivity extends AppCompatActivity {
         lastName = findViewById(R.id.lastName_su);
         password = (EditText) findViewById(R.id.pass_su);
         repassword = (EditText) findViewById(R.id.pass_su2);
+        secAns = (EditText) findViewById(R.id.answer_su);
         signup = (Button) findViewById(R.id.signup);
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Please wait...");
@@ -71,6 +72,7 @@ public class SignUpActivity extends AppCompatActivity {
         final String PhNumber = phNumber.getText().toString();
         final String Pass = password.getText().toString();
         final String SellerID = Integer.toString(Constants.Seller_ID);
+        final String SecAns = secAns.getText().toString();
 
         StringRequest stringRequest = null;
         try {
@@ -110,6 +112,8 @@ public class SignUpActivity extends AppCompatActivity {
                     params.put("MobileNum", PhNumber);
                     params.put("Pswd", Pass);
                     params.put("SellerID", SellerID);
+                    params.put("SecAns", SecAns);
+
                     return params;
                 }
             };

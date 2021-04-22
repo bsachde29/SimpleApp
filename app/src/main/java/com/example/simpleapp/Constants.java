@@ -43,4 +43,12 @@ public class Constants {
 
     public static final String URL_Search = ROOT_URL + "Search.php";
 
+    public static final String URL_ChangePass = ROOT_URL + "ChangePass.php";
+
+    public static final String URL_GetBuyer = ROOT_URL + "GetBuyer.php";
+
+    public static final String URL_ModifyBuyer =  ROOT_URL + "ModifyBuyer.php";
+
+
+
 }
