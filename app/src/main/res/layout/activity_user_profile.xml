@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/email_su"
+        android:id="@+id/email_edit"
         android:layout_width="309dp"
         android:layout_height="40dp"
         android:layout_marginStart="51dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/phNumber_su"
+        android:id="@+id/phNumber_edit"
         android:layout_width="309dp"
         android:layout_height="40dp"
         android:layout_marginStart="51dp"
@@ -33,41 +33,10 @@
         app:layout_constraintStart_toStartOf="parent"
         android:hint="Mobile Number"
 
-        app:layout_constraintTop_toBottomOf="@+id/firstName_su" />
+        app:layout_constraintTop_toBottomOf="@+id/firstName_edit" />
 
     <EditText
-        android:id="@+id/pass_su"
-        android:layout_width="309dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="51dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="51dp"
-
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:hint="Password"
-        android:inputType="textPassword"
-
-        app:layout_constraintTop_toBottomOf="@+id/phNumber_su" />
-
-    <EditText
-        android:id="@+id/pass_su2"
-        android:layout_width="309dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="51dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="51dp"
-
-        android:inputType="textPassword"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:hint="Re-type Password"
-        app:layout_constraintTop_toBottomOf="@+id/pass_su" />
-
-    <EditText
-        android:id="@+id/firstName_su"
+        android:id="@+id/firstName_edit"
         android:layout_width="126dp"
         android:layout_height="40dp"
         android:layout_marginStart="51dp"
@@ -79,10 +48,10 @@
 
         android:hint="First Name"
 
-        app:layout_constraintTop_toBottomOf="@+id/email_su" />
+        app:layout_constraintTop_toBottomOf="@+id/email_edit" />
 
     <EditText
-        android:id="@+id/lastName_su"
+        android:id="@+id/lastName_edit"
         android:layout_width="126dp"
         android:layout_height="40dp"
         android:layout_marginEnd="51dp"
@@ -92,21 +61,54 @@
 
         android:hint="Last Name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_su" />
-
+        app:layout_constraintTop_toBottomOf="@+id/email_edit" />
 
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/secAns_edit"
         android:layout_width="309dp"
         android:layout_height="40dp"
         android:layout_marginStart="51dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="51dp"
         android:ems="10"
         android:hint="Mother's maiden name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.388"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass_su2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="30dp"
+        android:text="Edit Details."
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/email_edit"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="44dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#4CAF50"
+        android:text="Save"
+        android:textColor="#FFFFFF"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="397dp" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="20dp"
+        android:text="Mother's maiden name"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phNumber_edit" />
 </androidx.constraintlayout.widget.ConstraintLayout>
