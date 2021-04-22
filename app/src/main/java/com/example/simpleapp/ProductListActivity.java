@@ -28,7 +28,7 @@ import java.util.Map;
 public class ProductListActivity extends AppCompatActivity {
 
     TableLayout tableLayout;
-    Button cart, addAddress, sellerDetails, orders, search;
+    Button cart, pp, search;
 
 
     @Override
@@ -42,15 +42,20 @@ public class ProductListActivity extends AppCompatActivity {
 
 
         cart = findViewById(R.id.Gotocart);
-        addAddress = findViewById(R.id.GotoAddAddress);
-        sellerDetails = findViewById(R.id.GotoSellerDetails);
-        orders = findViewById(R.id.GotoOrder);
+        pp = findViewById(R.id.gotopp);
         search = findViewById(R.id.gotoSearch);
 
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), SearchActivity2.class);
+                startActivity(intent);
+            }
+        });
+        pp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), ProfilePageActivity.class);
                 startActivity(intent);
             }
         });
@@ -63,30 +68,7 @@ public class ProductListActivity extends AppCompatActivity {
             }
         });
 
-        addAddress.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(), AddressBookActivity.class);
-                startActivity(intent);
-            }
-        });
 
-
-        sellerDetails.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(), SellerDetailsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        orders.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(), Orders.class);
-                startActivity(intent);
-            }
-        });
 
 
         StringRequest stringRequest = null;

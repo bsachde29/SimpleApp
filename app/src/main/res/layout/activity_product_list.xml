@@ -51,15 +51,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/GotoSellerDetails"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="right"
-                            android:text="Seller Details" />
-                    </LinearLayout>
+                        android:orientation="horizontal"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -67,15 +59,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:orientation="horizontal"
-                        android:weightSum="2">
-
-
-                        <Button
-                            android:id="@+id/GotoAddAddress"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Addreses" />
-                    </LinearLayout>
+                        android:weightSum="2"/>
 
                 </TableRow>
 
@@ -95,15 +79,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/button2"
-                            android:layout_width="72dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Button" />
-                    </LinearLayout>
+                        android:orientation="horizontal"/>
 
                     <LinearLayout
                         android:layout_width="161dp"
@@ -111,15 +87,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:orientation="horizontal"
-                        android:weightSum="2">
-
-
-                        <Button
-                            android:id="@+id/GotoOrder"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Orders" />
-                    </LinearLayout>
+                        android:weightSum="2"/>
                 </TableRow>
 
                 <TableRow
@@ -144,7 +112,7 @@
                 android:textSize="24sp" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/gotopp"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_weight="1"
