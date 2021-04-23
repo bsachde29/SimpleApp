@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +31,8 @@ public class CartActivity extends AppCompatActivity {
 
     CartCell cartCell;
     TableLayout tableLayout;
-    Button checkout;
+    EditText discountCode;
+    Button checkout, discountButton;
     private String CartID;
 
     @Override
@@ -43,6 +45,8 @@ public class CartActivity extends AppCompatActivity {
 
         StringRequest stringRequest = null;
 
+        discountButton = findViewById(R.id.discountButton);
+        discountCode = findViewById(R.id.discountCode);
 
         this.CartID = SaveSharedPreference.getPrefCartId(getApplicationContext());
         System.out.println("currCartID - " + CartID);
@@ -226,6 +230,13 @@ public class CartActivity extends AppCompatActivity {
         subtotal.setText("$ " + subTotal);
         checkout = findViewById(R.id.checkoutButton);
 
+        discountButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addDiscount();
+            }
+        });
+
 
         checkout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -233,6 +244,50 @@ public class CartActivity extends AppCompatActivity {
                 addOrder();
             }
         });
+
+    }
+
+    protected void addDiscount() {
+        final String CartID = SaveSharedPreference.getPrefCartId(getBaseContext());
+        final String DiscountCode = discountCode.getText().toString();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,
+                Constants.URL_AddDiscount,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            System.out.println(response);
+                            if (!response.equals("Cart Updated")) {
+                                Toast.makeText(getApplicationContext(),
+                                        "Code Applied! Subtotal Updated!", Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(getApplicationContext(),
+                                        "Invalid Code!", Toast.LENGTH_LONG).show();
+                            }
+//                                tableLayout.addView(new RowDivider(getApplicationContext()).tableRow);
+//                                tableLayout.addView(cell2.tableRow);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.println(error.getMessage());
+                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("CartID", CartID);
+                params.put("DiscountCode", DiscountCode);
+                return params;
+            }
+        };
+
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
 
 
     }
