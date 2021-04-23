@@ -41,6 +41,7 @@ public class ProductListActivity extends AppCompatActivity {
         FontManager.markAsIconContainer(findViewById(R.id.tabBar), iconFont);
 
 
+
         cart = findViewById(R.id.Gotocart);
         pp = findViewById(R.id.gotopp);
         search = findViewById(R.id.gotoSearch);
