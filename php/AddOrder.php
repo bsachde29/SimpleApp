@@ -54,6 +54,7 @@ try{
             $stmt7->execute();
             $stmt8 = $conn->prepare("INSERT INTO Seller_Buyer_Orders (SellerID, BuyerID, OrderID) 
                 VALUES ('$sellerID', '$buyerID', '$orderID')");
+            $stmt8->execute();
         }
     }
 
