@@ -38,7 +38,7 @@ public class SearchActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_search2);
 
         Typeface iconFont = FontManager.getTypeface(getApplicationContext(), FontManager.FONTAWESOME);
-        FontManager.markAsIconContainer(findViewById(R.id.searchTable), iconFont);
+        FontManager.markAsIconContainer(findViewById(R.id.searchButton), iconFont);
 
         keyword = findViewById(R.id.searchBox);
         searchButton = findViewById(R.id.searchButton);
