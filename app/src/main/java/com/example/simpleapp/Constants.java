@@ -55,8 +55,9 @@ public class Constants {
 
     public static final String URL_getEmail =  ROOT_URL + "getEmail.php";
 
-    public static final String URL_GetNotification = ROOT_URL + "GetNotification";
+    public static final String URL_GetNotification = ROOT_URL + "GetNotification.php";
 
+    public static final String URL_AddDiscount = ROOT_URL + "AddDiscount.php";
 
 
 }

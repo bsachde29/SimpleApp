@@ -32,7 +32,7 @@ try{
                 $newAmount = (1-($discountValue / 100)) * ($cartPrice);
                 $stmt4 = $conn->prepare("UPDATE Cart SET DiscountID = '$discountID',totalPrice = '$newAmount' WHERE CartID = '$cartID'");
                 $stmt4->execute();
-                echo "Cart Updated\n";
+                echo "Cart Updated";
             } else {
                 if (($cartPrice - $discountValue) < 0) {
                     echo "Wrong Discount Details";
@@ -40,7 +40,7 @@ try{
                     $newAmount = ($cartPrice) - $discountValue;
                     $stmt4 = $conn->prepare("UPDATE Cart SET DiscountID = '$discountID',totalPrice = '$newAmount' WHERE CartID = '$cartID'");
                     $stmt4->execute();
-                    echo "Cart Updated\n";
+                    echo "Cart Updated";
                 }
 
             }
