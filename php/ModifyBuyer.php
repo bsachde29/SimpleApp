@@ -18,6 +18,7 @@ try{
     $conn = new PDO("mysql:host=$servername;dbname=$dbname",$username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $conn->prepare("UPDATE Buyers set FirstName ='$first',LastName ='$last',Email = '$email',MobileNum ='$mobile',SecAns='$secAns'  WHERE BuyerID = '$buyerID'");
+    echo "UPDATE Buyers set FirstName ='$first',LastName ='$last',Email = '$email',MobileNum ='$mobile',SecAns='$secAns'  WHERE BuyerID = '$buyerID'";
     $stmt->execute();
 }
 catch(PDOException$e) {

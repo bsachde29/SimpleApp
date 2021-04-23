@@ -11,7 +11,7 @@ $dbname = "simpledb";
 try{
     $conn = new PDO("mysql:host=$servername;dbname=$dbname",$username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT BuyerID FROM Buyers  WHERE Email= '$email'");
+    $stmt = $conn->prepare("SELECT * FROM Buyers  WHERE Email= '$email'");
     $stmt->execute();
     $seller = $stmt->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode($seller[0]);

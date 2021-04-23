@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 //$pass = $_POST['Pswd'];
 //$SecAns = $_POST['SecAns'];
 
-$buyerID = $_POST['BuyerID'];
+$buyerID = $_POST['Email'];
 $pass = $_POST['Pswd'];
 $SecAns = $_POST['SecAns'];
 
@@ -17,14 +17,13 @@ $dbname = "simpledb";
 try{
     $conn = new PDO("mysql:host=$servername;dbname=$dbname",$username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT SecAns FROM Buyers WHERE BuyerID = '$buyerID'");
+    $stmt = $conn->prepare("SELECT SecAns FROM Buyers WHERE Email = '$buyerID'");
     $stmt->execute();
     $answer = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    echo($answer[0]['SecAns']);
-    if ($answer[0]['SecAns'] == $SecAns) {
-        $stmt1 = $conn->prepare("UPDATE Buyers SET Pswd = $pass WHERE BuyerID = $buyerID ");
-        $stmt1->execute();
-    }
+    $stmt1 = $conn->prepare("UPDATE Buyers SET Pswd = '$pass' WHERE Email = '$buyerID' ");
+    echo "UPDATE Buyers SET Pswd = $pass WHERE Email = $buyerID";
+    $stmt1->execute();
+
 }
 catch(PDOException$e) {
     echo "Error: ".$e ->getMessage();

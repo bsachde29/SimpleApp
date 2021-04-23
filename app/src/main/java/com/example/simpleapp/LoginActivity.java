@@ -24,7 +24,7 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
 
     EditText email, password;
-    Button signIn, signup;
+    Button signIn, signup, forgotPass;
     ProgressDialog progressDialog;
 
     @Override
@@ -32,6 +32,15 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         signup = findViewById(R.id.signup_instead);
+        forgotPass = findViewById(R.id.gotoForgot);
+        forgotPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), ResetPassActivity.class);
+                startActivity(intent);
+            }
+        });
+
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         email = (EditText) findViewById(R.id.emai_li);
         password = (EditText) findViewById(R.id.password_li);
         signIn = (Button) findViewById(R.id.signin);
@@ -121,6 +131,7 @@ public class LoginActivity extends AppCompatActivity {
                         public void onResponse(String response) {
                             try {
                                 System.out.println("Cart Fetched Successfully");
+                                System.out.println(response);
                                 SaveSharedPreference.setPrefCartId(getBaseContext(), response.replace("\"", ""));
                                 Toast.makeText(getApplicationContext(),
                                         "Successfully logged in", Toast.LENGTH_LONG).show();

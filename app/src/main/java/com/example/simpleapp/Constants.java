@@ -49,6 +49,9 @@ public class Constants {
 
     public static final String URL_ModifyBuyer =  ROOT_URL + "ModifyBuyer.php";
 
+    public static final String URL_getEmail =  ROOT_URL + "getEmail.php";
+
+
 
 
 }

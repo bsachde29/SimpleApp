@@ -53,7 +53,7 @@ public class ResetPassActivity extends AppCompatActivity {
         StringRequest stringRequest = null;
         try {
             stringRequest = new StringRequest(Request.Method.POST,
-                    Constants.URL_SignUp,
+                    Constants.URL_getEmail,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
@@ -95,7 +95,7 @@ public class ResetPassActivity extends AppCompatActivity {
         final String SecAnsFromUser = secAns.getText().toString();
         final String pass = password.getText().toString();
         final String rePass = rePassword.getText().toString();
-        final String buyerID = SaveSharedPreference.getPrefBuyerId(getBaseContext());
+        final String Email = email.getText().toString();
 
         if (!pass.equals(rePass)) {
             Toast.makeText(getApplicationContext(),"Passwords Don't Match", Toast.LENGTH_LONG).show();
@@ -114,6 +114,7 @@ public class ResetPassActivity extends AppCompatActivity {
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
+                            System.out.println(response);
                             try {
                                 Toast.makeText(getApplicationContext(),"Password Updated", Toast.LENGTH_LONG).show();
                             } catch (Exception e) {
@@ -131,7 +132,7 @@ public class ResetPassActivity extends AppCompatActivity {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String, String> params = new HashMap<>();
-                    params.put("BuyerID", buyerID);
+                    params.put("Email", Email);
                     params.put("Pswd", pass);
                     params.put("SecAns", SecAnsFromUser);
 
