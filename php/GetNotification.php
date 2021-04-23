@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ALL);
-$sellerID = $_POST['SellerID'];
+$sellerID = $_POST['BuyerID'];
 
 $servername = "selldb.cqt5tgj7qyws.us-east-2.rds.amazonaws.com";
 $username = "simpledb";
@@ -11,7 +11,7 @@ $dbname = "simpledb";
 try{
     $conn = new PDO("mysql:host=$servername;dbname=$dbname",$username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT OrderID FROM Notification  WHERE SellerID = '$sellerID' order by NotificationID DESC");
+    $stmt = $conn->prepare("SELECT OrderID FROM Notification  WHERE BuyerID = '$sellerID' order by NotificationID DESC");
     $stmt->execute();
     $seller = $stmt->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode($seller);
