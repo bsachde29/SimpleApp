@@ -8,4 +8,5 @@
     <string name="fa_list">&#xf03a;</string>
     <string name="fa_User">&#xf007;</string>
     <string name="fa_key">&#xf084;</string>
+    <string name = "fa_discount">&#xf688;</string>
 </resources>
