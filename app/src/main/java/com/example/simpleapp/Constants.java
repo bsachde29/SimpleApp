@@ -6,7 +6,11 @@ public class Constants {
     //Currently Hardcoded
     //TODO change this from build script
     public static final int Seller_ID = 23;
+
+    public static final String Store_Name = "Turkey Store";
+
     private static final String ROOT_URL = "http://3.128.221.131/php/";
+
     public static final String URL_TEST = ROOT_URL + "test.php";
 
     public static final String URL_SignUp = ROOT_URL + "RegisterUser.php";
@@ -51,6 +55,7 @@ public class Constants {
 
     public static final String URL_getEmail =  ROOT_URL + "getEmail.php";
 
+    public static final String URL_GetNotification = ROOT_URL + "GetNotification";
 
 
 
