@@ -237,6 +237,7 @@ public class CartActivity extends AppCompatActivity {
         StringRequest stringRequest = null;
         String BuyerID = SaveSharedPreference.getPrefBuyerId(getApplicationContext());
         String CartID = SaveSharedPreference.getPrefCartId(getApplicationContext());
+        String SellerID = Integer.toString(Constants.Seller_ID);
         try {
             stringRequest = new StringRequest(Request.Method.POST,
                     Constants.URL_AddOrder,
@@ -260,6 +261,7 @@ public class CartActivity extends AppCompatActivity {
                     Map<String, String> params = new HashMap<>();
                     params.put("BuyerID", BuyerID);
                     params.put("CartID", CartID);
+                    params.put("SellerID", SellerID);
                     return params;
                 }
             };
