@@ -260,6 +260,9 @@ public class CartActivity extends AppCompatActivity {
                             if (!response.equals("Cart Updated")) {
                                 Toast.makeText(getApplicationContext(),
                                         "Code Applied! Subtotal Updated!", Toast.LENGTH_LONG).show();
+
+                                Intent intent = new Intent(getBaseContext(), CartActivity.class);
+                                startActivity(intent);
                             } else {
                                 Toast.makeText(getApplicationContext(),
                                         "Invalid Code!", Toast.LENGTH_LONG).show();

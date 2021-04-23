@@ -54,7 +54,7 @@ public class NotificationActivity extends AppCompatActivity {
                                 String OrderID = jsonObject.getString("OrderID");
                                 String notify = generateString(OrderID);
                                         cell = new NotificationCell(getApplicationContext(), notify);
-                                tableLayout = findViewById(R.id.tableLayoutProdList);
+
                                 tableLayout.addView(new RowDivider(getApplicationContext()).tableRow);
                                 tableLayout.addView(cell.tableRow);
                             }
