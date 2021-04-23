@@ -9,4 +9,5 @@
     <string name="fa_User">&#xf007;</string>
     <string name="fa_key">&#xf084;</string>
     <string name = "fa_discount">&#xf688;</string>
+    <string name="fa_noti">&#xf0f3;</string>
 </resources>

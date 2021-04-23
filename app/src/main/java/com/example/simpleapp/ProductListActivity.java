@@ -28,7 +28,7 @@ import java.util.Map;
 public class ProductListActivity extends AppCompatActivity {
 
     TableLayout tableLayout;
-    Button cart, pp, search;
+    Button cart, pp, search, not;
 
 
     @Override
@@ -44,6 +44,16 @@ public class ProductListActivity extends AppCompatActivity {
         cart = findViewById(R.id.Gotocart);
         pp = findViewById(R.id.gotopp);
         search = findViewById(R.id.gotoSearch);
+        not = findViewById(R.id.gotoNot);
+
+        not.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), NotificationActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         search.setOnClickListener(new View.OnClickListener() {
             @Override
