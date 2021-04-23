@@ -22,7 +22,7 @@ try{
         if ($totalPrice == 0) {
             echo "Nothing in cart";
         } else {
-            $orderState = 1;
+            $orderState = 0;
             $firstName = $cart[0]['FirstName'];
             $lastName = $cart[0]['LastName'];
             $email = $cart[0]['Email'];
