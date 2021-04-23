@@ -257,7 +257,7 @@ public class CartActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         try {
                             System.out.println(response);
-                            if (!response.equals("Cart Updated")) {
+                            if (response.equals("Cart Updated")) {
                                 Toast.makeText(getApplicationContext(),
                                         "Code Applied! Subtotal Updated!", Toast.LENGTH_LONG).show();
 
