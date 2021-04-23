@@ -2,6 +2,7 @@
 error_reporting(E_ALL);
 $buyerID  = $_POST['BuyerID'];
 $cartID = $_POST['CartID'];
+$sellerID = $_POST['SellerID'];
 
 $servername = "selldb.cqt5tgj7qyws.us-east-2.rds.amazonaws.com";
 $username = "simpledb";
@@ -51,6 +52,8 @@ try{
             $stmt7 = $conn->prepare("INSERT INTO Cart (BuyerID, totalPrice, FirstName, LastName, Email, MobileNum) 
                 VALUES ('$buyerID', '0.0' , '$firstName', '$lastName', '$email', '$mobileNum')");
             $stmt7->execute();
+            $stmt8 = $conn->prepare("INSERT INTO Seller_Buyer_Orders (SellerID, BuyerID, OrderID) 
+                VALUES ('$sellerID', '$buyerID', '$orderID')");
         }
     }
 
