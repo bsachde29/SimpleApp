@@ -10,7 +10,6 @@ public class NotificationCell {
     TextView textView;
 
 
-
     NotificationCell(Context context, String notification) {
         textView = new TextView(context);
         textView.setText(notification);
